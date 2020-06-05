@@ -4,7 +4,7 @@
         <meta cherset="UTF-8"/>
         <title> Admin </title>
         <link rel="stylesheet" href="admin/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="admin/css/admin.css"/>
+        <link rel="stylesheet" href="admin/css/style.css"/>
     </head>
     <body>
         {{-- start navbar --}}
@@ -22,14 +22,18 @@
               <div class="collapse navbar-collapse" id="app-nav">
                 <ul class="nav navbar-nav">
                   <li ><a href="#">Categores</a></li>
+                  <li ><a href="#">Members</a></li>
+                  <li ><a href="#">Categores</a></li>
+                  <li ><a href="#">Categores</a></li>
+                  <li ><a href="#">Categores</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropd own" role="button" aria-haspopup="true" aria-expanded="false">Username <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Username <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="#">Edit Profail</a></li>
                       <li><a href="#">Settings</a></li>
-                      <li><a href="#">LogOut</a></li>
+                      <li><a href="logout.blade.php">LogOut</a></li>
                     </ul>
                   </li>
                 </ul>
