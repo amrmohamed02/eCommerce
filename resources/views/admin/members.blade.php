@@ -8,21 +8,21 @@
     <form class="form-horizontal" >
 
         <div class="form-group  form-group-lg ">
-             <lable class="col-sm-2 control-lable " > Username </lable>
+             <label class="col-sm-2 control-label " > Username </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="username" class="form-control" />
             </div>
         </div>
 
         <div class="form-group form-group-lg ">
-             <lable class="col-sm-2 control-lable " > Password </lable>
+             <label class="col-sm-2 control-label " > Password </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="password" name="password" class="form-control" />
             </div>
         </div>        
 
         <div class="form-group form-group-lg ">
-             <lable class="col-sm-2 control-lable " > E-mail </lable>
+             <label class="col-sm-2 control-label " > E-mail </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="email" name="email" class="form-control" />
             </div>
@@ -30,7 +30,7 @@
 
 
         <div class="form-group form-group-lg ">
-             <lable class="col-sm-2 control-lable " > Fullname </lable>
+             <label class="col-sm-2 control-label " > Fullname </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="fullname" class="form-control" />
             </div>

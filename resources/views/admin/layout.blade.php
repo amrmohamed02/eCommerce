@@ -3,8 +3,8 @@
     <head>
         <meta cherset="UTF-8"/>
         <title> Admin </title>
-        <link rel="stylesheet" href="admin/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="admin/css/style.css"/>
+        <link rel="stylesheet" href="/admin/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/admin/css/style.css"/>
     </head>
     <body>
         {{-- start navbar --}}
@@ -47,9 +47,9 @@
         <div class="footer">
         
         </div>
-        <script src="admin/js/admin.js"></script>
-        <script src="admin/js/jquery-3.5.1.min.js"></script>
-        <script src="admin/js/bootstrap.min.js"></script>
+        <script src="/admin/js/admin.js"></script>
+        <script src="/admin/js/jquery-3.5.1.min.js"></script>
+        <script src="/admin/js/bootstrap.min.js"></script>
     </body>
 </html>
 {{-- end footer --}}

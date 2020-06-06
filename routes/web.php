@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/', function () {
-    return view('admin/index');
+
+Route::post('/admin/login', "UserController@login");
+Route::view('/admin/login', 'admin.index');
+Route::get('/admin/logout', function(){
+    session()->forget('userid');
+    return redirect('/admin/login');
 });
+Route::view('/', 'admin.members');
+
