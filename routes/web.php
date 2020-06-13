@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-Route::post('/admin/login', "UserController@login");
-Route::view('/admin/login', 'admin.index');
-Route::get('/admin/logout', function(){
-    session()->forget('userid');
-    return redirect('/admin/login');
+Route::group(['prefix' => '{language}'], function ($language) {
+    Route::post('/admin/login', "UserController@login");
+    Route::get('/admin/login', "UserController@login");
+    Route::get('/admin/logout',"UserController@logout");
+    Route::view('/', 'admin.members');
 });
-Route::view('/', 'admin.members');
-
