@@ -40,11 +40,12 @@ class UserController extends Controller
                 return view('admin.dashboard');
             }
         }
-        else{
+        if($request->isMethod('post')){
             $email = $request->input('email');
                 $user=DB::table("user")->where('email',$email)->first();
                 if($user){  
-                    $password=Hash::check($request->input('password'), $user->password);
+                    // $password=Hash::check($request->input('password'), $user->password);
+                    $password=DB::table("user")->where($request->input('password'), $user->password);
                     if($password){
                         session(['userid' => $user->id]);  
                         session(['username' => $user->name]);  

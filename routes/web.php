@@ -15,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(['prefix' => '{language}'], function ($language) {
-    Route::post('/admin/login', "UserController@login");
-    Route::get('/admin/login', "UserController@login");
+Route::group(['prefix' => '{language}'], function () {
+    Route::any('/admin/login', "UserController@login");
     Route::get('/admin/logout',"UserController@logout");
-    Route::view('/', 'admin.members');
+    Route::get('/admin/edit',function($language)
+    {
+        App::setLocale($language);
+        return view('admin.members');
+    });
 });

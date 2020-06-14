@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center" >Edit Member</h1>
+<h1 class="text-center" >{{__('Edit')}} {{__('Member')}}</h1>
 
 <div class="container">
 
@@ -30,7 +30,7 @@
 
 
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > Fullname </label>
+             <label class="col-sm-2 control-label " > {{__('Fullname')}} </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="fullname" class="form-control" />
             </div>
@@ -38,7 +38,7 @@
 
         <div class="form-group form-group-lg ">
                 <div class=" col-sm-offset-2 col-sm-10">
-                <input type="submit" value="Update" class="btn btn-primary btn-lg" />
+                <input type="submit" value="{{__('Update')}}" class="btn btn-primary btn-lg" />
             </div>
         </div>        
 

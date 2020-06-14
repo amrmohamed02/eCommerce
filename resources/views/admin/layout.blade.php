@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/admin/css/style.css"/>
     </head>
     <body>
+      @if(session('userid'))
         {{-- start navbar --}}
         <nav class="navbar navbar-inverse">
             <div class="container">
@@ -33,13 +34,14 @@
                     <ul class="dropdown-menu">
                       <li><a href="#">Edit Profail</a></li>
                       <li><a href="#">Settings</a></li>
-                      <li><a href="logout.blade.php">LogOut</a></li>
+                    <li><a href="/{{App::getlocale()}}/admin/logout">LogOut</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
+        @endif
           {{-- end navbar --}}
           
           @yield('index')
