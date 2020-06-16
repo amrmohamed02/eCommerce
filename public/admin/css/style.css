@@ -71,6 +71,22 @@ h1{
     margin: 40px 0;
 }
 
+.main-table td{
+    background-color: #fff;
+    vertical-align: middle !important;
+}
+
+.main-table tr:first-child td{
+    background-color: #333;
+    color: #FFF;
+
+}
+
+.main-table .btn{
+    padding: 3px 10px;
+}
+
+
 
 /* end members */
 
