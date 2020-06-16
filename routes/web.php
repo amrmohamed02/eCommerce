@@ -24,3 +24,10 @@ Route::group(['prefix' => '{language}'], function () {
         return view('admin.members');
     });
 });
+
+// انسخ دا وعدل فيه هيكون سهل ان شاء الله 
+Route::get('/admin/edit',function()
+{   //('/admin/edit') -> is the URL 
+    return view('admin/members');
+    // ('admin/members')-> is the page that will open 
+});
