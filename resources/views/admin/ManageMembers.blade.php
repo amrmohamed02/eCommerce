@@ -1,10 +1,9 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center">Mange Mambers</h1>
+<h1 class="text-center">Manage Mambers</h1>
 
 <div class="container">
-
     <div class="table-responsive">
         <table class=" main-table text-center table table-bordered">
 
@@ -16,60 +15,27 @@
                 <td>Register Date </td>
                 <td>Control</td>
             </tr>
-
-            <tr>
-                <td>1</td>
-                <td>gggggg</td>
-                <td>gggggg</td>
-                <td>ggggg</td>
-                <td>bbbbbb</td>
-                <td>
-                    <a href="#" class="btn btn-success">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>ccccc</td>
-                <td>vvvvvv</td>
-                <td>vvvvv</td>
-                <td>vvvv</td>
-                <td>
-                    <a href="#" class="btn btn-success">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href="#" class="btn btn-success">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href="#" class="btn btn-success">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-
+            @foreach ($users as $user)
+                <form method="POST" action="/{{$language}}/admin/managemember/{{$user->id}}">
+                    @csrf
+                    <tr>
+                        <td>{{$user->id}}</td>
+                        <td>{{$user->username}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->name}}</td>
+                        <td></td>
+                        <td>
+                            <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success">Edit</a>
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </td>
+                    </tr>
+                </form>
+            @endforeach
         </table>
 
     </div>
 
-<a href="#" class="btn btn-primary"> <i class="fa fa-plus"></i>New Members </a>
+<a href="/{{$language}}/admin/addmember" class="btn btn-primary"> <i class="fa fa-plus"></i>New Members </a>
 
 
 </div>

@@ -18,8 +18,9 @@ class CreateUser extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('username');
             $table->string('groupid')->default('0');
-            $table->string('terms');
+            //$table->string('terms');
             $table->timestamps();
         });
     }

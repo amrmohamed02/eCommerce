@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '{language}'], function () {
     Route::any('/admin/login', "UserController@login");
+    Route::get('/admin/dashboard', "UserController@welcome");
     Route::get('/admin/logout',"UserController@logout");
-    Route::get('/admin/edit',function($language)
-    {
-        App::setLocale($language);
-        return view('admin.members');
-    });
+    Route::any('/admin/editmember/{id}',"UserController@edit");
+    Route::any('/admin/addmember',"UserController@register");
+    Route::get('/admin/managemember/',"UserController@manage");
+    Route::post('/admin/managemember/{id}',"UserController@manage");
+    
 });
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 

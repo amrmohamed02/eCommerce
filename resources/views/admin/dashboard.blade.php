@@ -1,6 +1,6 @@
 @extends('admin/layout')
 @section('index')
 
-<p>hello dash</p>
+<p>hello {{session('username')}}</p>
 
 @endsection
