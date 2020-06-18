@@ -1,6 +1,12 @@
 @extends('admin/layout')
 @section('index')
 
+<script>
+function myFunction() {
+  confirm("Are you sure !");
+}
+</script>
+
 <h1 class="text-center">Manage Mambers</h1>
 
 <div class="container">
@@ -26,7 +32,7 @@
                         <td></td>
                         <td>
                             <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success">Edit</a>
-                            <input type="submit" class="btn btn-danger" value="Delete">
+                            <input onclick="myFunction()" type="submit" class="btn btn-danger" value="Delete">
                         </td>
                     </tr>
                 </form>

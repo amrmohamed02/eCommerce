@@ -1,4 +1,7 @@
 <!DOCTYPE>
+<?php
+  $language=App::getlocale();
+?>
 <html>
     <head>
         <meta cherset="UTF-8"/>
@@ -7,7 +10,7 @@
         <link rel="stylesheet" href="/admin/css/style.css"/>
     </head>
     <body>
-      @if(session('userid'))
+      {{-- @if(session('userid')) --}}
         {{-- start navbar --}}
         <nav class="navbar navbar-inverse">
             <div class="container">
@@ -18,12 +21,12 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand" href="/{{$language}}/admin/dashboard">Home</a>
               </div>
               <div class="collapse navbar-collapse" id="app-nav">
                 <ul class="nav navbar-nav">
                   <li ><a href="#">Categores</a></li>
-                  <li ><a href="#">Members</a></li>
+                  <li ><a href="/{{$language}}/admin/managemember">Members</a></li>
                   <li ><a href="#">Categores</a></li>
                   <li ><a href="#">Categores</a></li>
                   <li ><a href="#">Categores</a></li>
@@ -41,7 +44,7 @@
               </div>
             </div>
           </nav>
-        @endif
+        {{-- @endif --}}
           {{-- end navbar --}}
           
           @yield('index')
