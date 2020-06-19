@@ -32,7 +32,7 @@ function myFunction() {
                         <td></td>
                         <td>
                             <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success">Edit</a>
-                            <input onclick="myFunction()" type="submit" class="btn btn-danger" value="Delete">
+                            <input onclick="myFunction()" type="submit" class="btn btn-danger confirm" value="Delete"/>
                         </td>
                     </tr>
                 </form>
