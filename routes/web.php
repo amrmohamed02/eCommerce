@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::redirect('/', '/admin/login');
 Route::group(['prefix' => '{language}'], function () {
     Route::any('/admin/login', "UserController@login");
     Route::get('/admin/dashboard', "UserController@welcome");
@@ -21,7 +21,6 @@ Route::group(['prefix' => '{language}'], function () {
     Route::any('/admin/editmember/{id}',"UserController@edit");
     Route::any('/admin/addmember',"UserController@register");
     Route::get('/admin/managemember/{id?}',"UserController@manage");
-    // Route::get('/admin/managemember/',"UserController@manage");
     
 });
 
