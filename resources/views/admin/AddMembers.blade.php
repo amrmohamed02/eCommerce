@@ -49,7 +49,6 @@
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
                 <input type="submit" value="Add" class="btn btn-primary btn-lg" />
-            <a href="/{{$language}}/admin/managemember" class="btn btn-primary btn-lg" >Back To Members </a>
             </div>
         </div>     
 

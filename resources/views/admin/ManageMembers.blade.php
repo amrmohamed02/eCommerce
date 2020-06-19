@@ -1,12 +1,6 @@
 @extends('admin/layout')
 @section('index')
 
-<script>
-function myFunction() {
-  confirm("Are you sure !");
-}
-</script>
-
 <h1 class="text-center">Manage Mambers</h1>
 
 <div class="container">
@@ -22,7 +16,7 @@ function myFunction() {
                 <td>Control</td>
             </tr>
             @foreach ($users as $user)
-                <form method="POST" action="/{{$language}}/admin/managemember/{{$user->id}}">
+                <form method="POST" >
                     @csrf
                     <tr>
                         <td>{{$user->id}}</td>
@@ -32,7 +26,7 @@ function myFunction() {
                         <td></td>
                         <td>
                             <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success">Edit</a>
-                            <input onclick="myFunction()" type="submit" class="btn btn-danger confirm" value="Delete"/>
+                            <a href="/{{$language}}/admin/managemember/{{$user->id}}" class="btn btn-danger confirm" onclick="return confirmation()">Delete</a>
                         </td>
                     </tr>
                 </form>
@@ -46,5 +40,9 @@ function myFunction() {
 
 </div>
 
-
+<script type="text/javascript">
+    function confirmation() {
+      return confirm('Are you sure you want to do this?');
+    }
+</script>
 @endsection

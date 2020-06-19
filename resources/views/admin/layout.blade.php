@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                       <li><a href="#">Edit Profail</a></li>
                       <li><a href="#">Settings</a></li>
-                    <li><a href="/{{App::getlocale()}}/admin/logout">LogOut</a></li>
+                    <li><a href="/{{$language}}/admin/logout">LogOut</a></li>
                     </ul>
                   </li>
                 </ul>

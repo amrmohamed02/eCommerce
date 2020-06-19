@@ -127,16 +127,16 @@ class UserController extends Controller
 
     public function manage(Request $request,$language,$id=null)
     {
-        App::setLocale($language);           
-            if($request->isMethod('post')){
-                $user =User::find($id);
-                $user->forcedelete();
-                return redirect("$language/admin/managemember");
-            }
-            else{
-                $users=User::all();
-                return view('admin.ManageMembers',["language"=>$language],["users"=>$users]);
-            }
+        App::setLocale($language);         
+        if(URL::current()==="http://localhost:8000/$language/admin/managemember/$id"){ 
+            $user =User::find($id);
+            $user->forcedelete();
+            return redirect("$language/admin/managemember");
+        }
+        else{
+            $users=User::all();
+            return view('admin.ManageMembers',["language"=>$language],["users"=>$users]);
+        }
         
 
         

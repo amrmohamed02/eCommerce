@@ -20,8 +20,8 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/admin/logout',"UserController@logout");
     Route::any('/admin/editmember/{id}',"UserController@edit");
     Route::any('/admin/addmember',"UserController@register");
-    Route::get('/admin/managemember/',"UserController@manage");
-    Route::post('/admin/managemember/{id}',"UserController@manage");
+    Route::get('/admin/managemember/{id?}',"UserController@manage");
+    // Route::get('/admin/managemember/',"UserController@manage");
     
 });
 
