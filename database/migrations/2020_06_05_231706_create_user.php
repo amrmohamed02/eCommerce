@@ -20,7 +20,7 @@ class CreateUser extends Migration
             $table->string('password');
             $table->string('username');
             $table->string('groupid')->default('0');
-            //$table->string('terms');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

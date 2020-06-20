@@ -21,12 +21,14 @@ Route::group(['prefix' => '{language}'], function () {
     Route::any('/admin/editmember/{id}',"UserController@edit");
     Route::any('/admin/addmember',"UserController@register");
     Route::get('/admin/managemember/{id?}',"UserController@manage");
+    Route::any('/admin/pendingmember/{id?}',"UserController@pending");
+
     
 });
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
-Route::get('/admin/edit',function()
+Route::get('/admin/a',function()
 {   //('/admin/edit') -> is the URL 
-    return view('admin/members');
+    return view('admin/PendingMembers');
     // ('admin/members')-> is the page that will open 
 });

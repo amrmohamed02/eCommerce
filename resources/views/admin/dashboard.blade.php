@@ -9,7 +9,7 @@
                 <div class="stat st-members"> 
                     Total Members
                     <!-- mange members اللينك يودي على صفحة الاعضاء-->
-                    <span><a href="/en/admin/managemember">30</a></span>
+                    <span><a href="/{{$language}}/admin/managemember">30</a></span>
                 </div>  
             </div>
 
@@ -17,21 +17,21 @@
                 <div class="stat st-pending">
                     Pending Members 
                     <!-- panding page here -->
-                    <span><a href="/en/admin/pendingmember">30</a></span>
+                    <span><a href="/{{$language}}/admin/pendingmember">30</a></span>
                 </div>           
             </div>
 
             <div class="col-md-3">
                 <div class="stat st-items">
                     Total Items
-                    <span><a href="/en/admin/managemember">1300</a></span>
+                    <span><a href="/{{$language}}/admin/managemember">1300</a></span>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="stat st-comments"> 
                     Total Comments
-                    <span><a href="/en/admin/managemember">3000</a></span>
+                    <span><a href="/{{$language}}/admin/managemember">3000</a></span>
                 </div>
             </div>
         </div>    

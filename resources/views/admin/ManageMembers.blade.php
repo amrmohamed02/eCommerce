@@ -23,7 +23,7 @@
                         <td>{{$user->username}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->name}}</td>
-                        <td></td>
+                        <td>{{$user->created_at}}</td>
                         <td>
                             <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success">Edit</a>
                             <a href="/{{$language}}/admin/managemember/{{$user->id}}" class="btn btn-danger confirm" onclick="return confirmation()">Delete</a>

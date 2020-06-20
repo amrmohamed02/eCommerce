@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\URL;
-use PhpOption\Option;
 
 class UserController extends Controller
 {
@@ -58,8 +57,6 @@ class UserController extends Controller
                 return view('admin.AddMembers',["language"=>$language]);
             }
         }
-        
-
     }
     public function login(Request $request,$language)
     {
@@ -76,8 +73,7 @@ class UserController extends Controller
             $email = $request->input('email');
                 $user=DB::table("user")->where('email',$email)->first();
                 if($user){  
-                    // $password=Hash::check($request->input('password'), $user->password);
-                    $password=DB::table("user")->where($request->input('password'), $user->password);
+                    $password=Hash::check($request->input('password'), $user->password);
                     if($password){
                         session(['userid' => $user->id]);  
                         session(['username' => $user->name]);  
@@ -90,7 +86,6 @@ class UserController extends Controller
                 else{
                     return "wrong email or pass";
                 }
-
         }
     }
 
@@ -119,10 +114,7 @@ class UserController extends Controller
             else{
                 return view('admin.EditMembers',['user'=>$user]);
             }
-        }
-        
-
-        
+        }  
     }
 
     public function manage(Request $request,$language,$id=null)
@@ -134,12 +126,9 @@ class UserController extends Controller
             return redirect("$language/admin/managemember");
         }
         else{
-            $users=User::all();
+            $users=User::where("status","accepted")->get();
             return view('admin.ManageMembers',["language"=>$language],["users"=>$users]);
-        }
-        
-
-        
+        } 
     }
 
     public function welcome(Request $request,$language)
@@ -151,10 +140,24 @@ class UserController extends Controller
                     return redirect("$language/admin/login");
                 }
                 else{
-                    return view('admin.Dashboard');
+                    return view('admin.Dashboard',["language"=>$language]);
                 }
             }
+        } 
+    }
+
+    public function pending(Request $request,$language,$id=null)
+    {
+        App::setLocale($language);         
+        if(URL::current()==="http://localhost:8000/$language/admin/pendingmember/$id"){ 
+            $user =User::find($id);
+            $user->status = "accepted";
+            $user->save();
+            return redirect("$language/admin/pendingmember");
         }
-        
+        else{
+            $users=User::where("status","pending")->get();
+            return view('admin.PendingMembers',["language"=>$language],["users"=>$users]);
+        }
     }
 }
