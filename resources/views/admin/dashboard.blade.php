@@ -16,6 +16,7 @@
             <div class="col-md-3">
                 <div class="stat st-pending">
                     Pending Members 
+                    <!-- panding page here -->
                     <span><a href="/en/admin/pendingmember">30</a></span>
                 </div>           
             </div>

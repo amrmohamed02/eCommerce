@@ -27,7 +27,7 @@
                         <td>
                             <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success">Edit</a>
                             <a href="/{{$language}}/admin/managemember/{{$user->id}}" class="btn btn-danger confirm" onclick="return confirmation()">Delete</a>
-                            <a href="#" class="btn btn-info">Accept</a>
+                            
                         </td>
                     </tr>
                 </form>
