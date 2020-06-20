@@ -64,13 +64,52 @@ body{
 
 /*end bootstrsp edit */
 
+/* start Dashboard */
+
+.home-stats .stat{
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #EEE;
+
+}
+.home-stats .stat a{
+    color: #EEE;
+    text-decoration: none;
+}
+.home-stats .stat span{
+    display: block;
+    font-size: 50px;
+}
+.home-stats .st-members{
+    background-color: #fe8a71; 
+}
+.home-stats .st-pending{
+    background-color: #3da4ab;
+}
+.home-stats .st-items{
+    background-color: #2ecc71;   
+}
+.home-stats .st-comments{
+    background-color: #9b59b6;
+}
+.latest{
+    text-align: left;
+    margin-top: 30px;
+
+}
+
+/* end Dashboard */
+
 /* start members */
 
 h1{
     font-size: 55px;
     margin: 40px 0;
 }
-
+.main-table {
+    box-shadow : 0 3px 10px #ccc;
+}
 .main-table td{
     background-color: #fff;
     vertical-align: middle !important;

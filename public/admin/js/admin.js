@@ -1,4 +1,4 @@
-$(function(){
+(function(){
 
     'use strict';
     //Hide Placeholder On Form Focus
@@ -36,7 +36,7 @@ $(function(){
 
     $('.confirm').click(function(){
 
-        return confirm('Are You Sure ?');
+        return confirm('Are You Sure ????');
 
     });
 
