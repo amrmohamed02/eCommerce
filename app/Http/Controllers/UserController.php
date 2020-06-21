@@ -140,7 +140,10 @@ class UserController extends Controller
                     return redirect("$language/admin/login");
                 }
                 else{
-                    return view('admin.Dashboard',["language"=>$language]);
+                    $users = User::orderBy('id', 'DESC')->get();
+                    $pending = User::where("status","pending")->count();
+                    // $posts = Post::orderBy('id', 'DESC')->get();
+                    return view('admin.Dashboard',["language"=>$language,"users"=>$users,"pending"=>$pending]);
                 }
             }
         } 

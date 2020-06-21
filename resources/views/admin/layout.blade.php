@@ -25,9 +25,9 @@
               </div>
               <div class="collapse navbar-collapse" id="app-nav">
                 <ul class="nav navbar-nav">
-                  <li ><a href="#" target="_blank">Categores</a></li>
+                  <li ><a href="/{{$language}}/admin/category" target="_blank">Categores</a></li>
                   <li ><a href="/{{$language}}/admin/managemember" target="_blank">Members</a></li>
-                  <li ><a href="#" target="_blank">Categores</a></li>
+                  <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">Pending Members</a></li>
                   <li ><a href="#" target="_blank">Categores</a></li>
                   <li ><a href="#" target="_blank">Categores</a></li>
                 </ul>

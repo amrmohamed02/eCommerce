@@ -9,7 +9,7 @@
                 <div class="stat st-members"> 
                     Total Members
                     <!-- mange members اللينك يودي على صفحة الاعضاء-->
-                    <span><a href="/{{$language}}/admin/managemember">30</a></span>
+                    <span><a href="/{{$language}}/admin/managemember">{{count($users)}}</a></span>
                 </div>  
             </div>
 
@@ -17,7 +17,7 @@
                 <div class="stat st-pending">
                     Pending Members 
                     <!-- panding page here -->
-                    <span><a href="/{{$language}}/admin/pendingmember">30</a></span>
+                    <span><a href="/{{$language}}/admin/pendingmember">{{$pending}}</a></span>
                 </div>           
             </div>
 
@@ -50,12 +50,13 @@
                     <div class="panel-body">
                         <ul class="list-unstyled latest-user">
                             <!--- لينك الايدت هيبقى موجود جوا طبعا بس معرفتش اعمله عشان الداتا بيز بايظة--->
-                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
-                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
-                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
-                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
-                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
-                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
+                            <?php $i=0;?>
+                            @foreach($users as $user)
+                                @if ($i<5)
+                                    <li>{{$user->name}} <span class="btn btn-success pull-right"><a href="/{{$language}}/admin/editmember/{{$user->id}}">Edit</a></span></li>
+                                    <?php ++$i;?>
+                                @endif
+                            @endforeach
                         
                         </ul>
                     </div>
