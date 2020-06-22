@@ -99,6 +99,25 @@ body{
 
 }
 
+.latest-user{
+    margin-bottom: 0;
+}
+.latest-user li{
+    padding: 10px;
+    overflow: hidden;
+}
+.latest-user li span a{
+    text-decoration: none;
+    color: #EEE;
+}
+.latest-user li:nth-child(odd){
+    background-color: #e4e4ec;
+}
+.latest-user li .btn{
+    padding: 0px 5px;
+}
+
+
 /* end Dashboard */
 
 /* start members */
@@ -116,7 +135,7 @@ h1{
 }
 
 .main-table tr:first-child td{
-    background-color: #333;
+    background-color:#3aabb3;
     color: #FFF;
 
 }

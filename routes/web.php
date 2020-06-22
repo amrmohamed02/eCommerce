@@ -27,8 +27,8 @@ Route::group(['prefix' => '{language}'], function () {
 });
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
-Route::get('/admin/a',function()
+Route::get('/admin/category',function()
 {   //('/admin/edit') -> is the URL 
-    return view('admin/PendingMembers');
+    return view('admin/Category');
     // ('admin/members')-> is the page that will open 
 });

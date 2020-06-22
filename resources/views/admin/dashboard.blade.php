@@ -48,7 +48,16 @@
                         <i class="fa fa-users"></i> Latest Registerd Users
                     </div>
                     <div class="panel-body">
-                        test
+                        <ul class="list-unstyled latest-user">
+                            <!--- لينك الايدت هيبقى موجود جوا طبعا بس معرفتش اعمله عشان الداتا بيز بايظة--->
+                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
+                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
+                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
+                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
+                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
+                            <li>ahmed <span class="btn btn-success pull-right"><a >Edit</a> </span> </li>
+                        
+                        </ul>
                     </div>
                 </div>
             </div>

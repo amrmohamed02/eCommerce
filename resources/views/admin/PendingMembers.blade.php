@@ -36,8 +36,6 @@
 
     </div>
 
-<a href="/{{$language}}/admin/addmember" class="btn btn-primary"> <i class="fa fa-plus"></i>New Members </a>
-
 
 </div>
 <script type="text/javascript">
