@@ -52,10 +52,10 @@ class UserController extends Controller
                 $user->username=$request->input('username');
                 $user->groupid=1;//seller
                 $user->save();
-                return view('admin.AddMembers',["language"=>$language]);
+                return view('admin.AddMember',["language"=>$language]);
             }
             else{
-                return view('admin.AddMembers',["language"=>$language]);
+                return view('admin.AddMember',["language"=>$language]);
             }
         }
     }

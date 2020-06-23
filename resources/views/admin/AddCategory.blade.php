@@ -90,21 +90,12 @@
                 </div>
             </div>
         </div>
-        <!---- end Ads faild ---->
+        <!---- end Ads faild ---->  
 
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
-            <butten class="btn btn-primary btn-lg">
-                <span class="glyphicon glyphicon-plus-sign"></span>    
-                <input type="submit" value="Add Category"   />  
-                </butten>
-            </div>
-        </div>   
-
-        <div class="form-group form-group-lg ">
-            <div class=" col-sm-offset-2 col-sm-10">
-                <butten class="btn btn-primary btn-lg">  
-                <span class="glyphicon glyphicon-plus-sign"></span>  Add Category </butten> 
+                <button class="btn btn-primary btn-lg" type="submit">  
+                <span class="glyphicon glyphicon-plus-sign"></span>  Add Category </button> 
             </div>
         </div> 
 
