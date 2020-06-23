@@ -144,8 +144,66 @@ h1{
     padding: 3px 10px;
 }
 
-
-
 /* end members */
+
+/* start category page */
+
+.categories .cat h3{
+    margin: 0 0 5px ;
+
+}
+.categories .cat{
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.categories .cat:hover .hidden-buttens{
+    right: 10px;
+}
+.categories .cat .hidden-buttens{
+    transition: all .5s ease-in-out;
+    position: absolute;
+    top: 35px;
+    right: -180px;
+
+}
+.categories .cat .hidden-buttens a{
+    margin-right: 5px;
+}
+.categories .cat .hidden-buttens .icon{
+    font-size: 12px;
+}
+.categories .cat .visibility{
+    background-color: #ff3838;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 15px;
+    color: #EEE;
+
+}
+.categories .cat .Comment{
+    background-color: #7d5fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 15px;
+    color: #EEE;
+
+}
+.categories .cat .ads{
+    background-color: #18dcff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 15px;
+    color: #EEE;
+
+}
+.categories hr{
+    border-top: 2px solid #18dcff;
+}
+.categories .cat:last-of-type ~ hr{
+    display: none;
+}
+
+/* end category page */
 
 
