@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\URL;
 
 class ProductController extends Controller
 {
-   public function add(Request $request,$language)
+   public function addcat(Request $request,$language)
    {
         App::setLocale($language);
         if($request->isMethod('get')){
-           return view('admin.addcategory',["language"=>$language]);
+           return view('admin.AddCategory',["language"=>$language]);
         }
         elseif($request->isMethod('post')){
         //     $this->validate($request,[
@@ -34,7 +34,7 @@ class ProductController extends Controller
         }  
    }
 
-   public function manage(Request $request,$language,$id=null)
+   public function managecat(Request $request,$language,$id=null)
    {
         App::setLocale($language);         
         if(URL::current()==="http://localhost:8000/$language/admin/managecategory/$id"){
