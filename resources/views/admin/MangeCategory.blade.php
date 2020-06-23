@@ -63,9 +63,7 @@
                     <span class="ads"> No Ads </span>
                 </div>
                 <hr/>
-
-
-            
+                
             </div>
     </div>
 
