@@ -24,11 +24,12 @@ Route::group(['prefix' => '{language}'], function () {
     Route::any('/admin/pendingmember/{id?}',"UserController@pending");
     Route::any('/admin/category',"ProductController@category");
     
+    
 });
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
-Route::get('/admin/category',function()
+Route::get('/admin/mangecategory',function()
 {   //('/admin/edit') -> is the URL 
-    return view('admin/Category');
+    return view('admin/MangeCategory');
     // ('admin/members')-> is the page that will open 
 });

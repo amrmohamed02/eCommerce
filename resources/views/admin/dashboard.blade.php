@@ -50,13 +50,13 @@
                     <div class="panel-body">
                         <ul class="list-unstyled latest-user">
                             <!--- لينك الايدت هيبقى موجود جوا طبعا بس معرفتش اعمله عشان الداتا بيز بايظة--->
-                            <?php $i=0;?>
+                             <?php $i=0;?>
                             @foreach($users as $user)
                                 @if ($i<5)
                                     <li>{{$user->name}} <span class="btn btn-success pull-right"><a href="/{{$language}}/admin/editmember/{{$user->id}}">Edit</a></span></li>
                                     <?php ++$i;?>
                                 @endif
-                            @endforeach
+                            @endforeach 
                         
                         </ul>
                     </div>

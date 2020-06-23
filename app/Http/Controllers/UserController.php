@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\URL;
 
+
 class UserController extends Controller
 {
     public function register(Request $request,$language)
@@ -133,7 +134,8 @@ class UserController extends Controller
 
     public function welcome(Request $request,$language)
     {
-        App::setLocale($language);
+         App::setLocale($language);
+         return view('admin.Dashboard');
         if(URL::current()==="http://localhost:8000/$language/admin/dashboard"){
             if($request->isMethod('get')){
                 if(!session('userid')){
@@ -145,8 +147,9 @@ class UserController extends Controller
                     // $posts = Post::orderBy('id', 'DESC')->get();
                     return view('admin.Dashboard',["language"=>$language,"users"=>$users,"pending"=>$pending]);
                 }
+                
             }
-        } 
+        }
     }
 
     public function pending(Request $request,$language,$id=null)
