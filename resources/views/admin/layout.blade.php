@@ -28,7 +28,7 @@
                   <li ><a href="/{{$language}}/admin/managecategory" target="_blank">Categores</a></li>
                   <li ><a href="/{{$language}}/admin/managemember" target="_blank">Members</a></li>
                   <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">Pending Members</a></li>
-                  <li ><a href="#" target="_blank">Categores</a></li>
+                  <li ><a href="/admin/items" target="_blank">Items</a></li>
                   <li ><a href="#" target="_blank">Categores</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

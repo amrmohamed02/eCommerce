@@ -28,8 +28,8 @@ Route::group(['prefix' => '{language}'], function () {
 });
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
-Route::get('/admin/mangecategory',function()
+Route::get('/admin/items',function()
 {   //('/admin/edit') -> is the URL 
-    return view('admin/MangeCategory');
+    return view('admin/Items');
     // ('admin/members')-> is the page that will open 
 });

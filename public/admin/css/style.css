@@ -147,9 +147,41 @@ h1{
 /* end members */
 
 /* start category page */
+.container .panel-heading .icon{
+    font-size: 25px;
+    margin-right: 4px;
+}
 
+.option{
+    margin-top: -10px;
+}
+.option a{
+    color: black;
+    text-decoration: none;
+}
+.option span{
+    color: black;
+    cursor: pointer;
+}
+.option .active{
+    color: red;
+    font-weight: bold;
+}
 .categories .cat h3{
     margin: 0 0 5px ;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6a6a6a;
+    
+
+}
+.categories .full-view p{
+    margin: 10px 3px;
+    color: #707070;
+}
+.categories .full-view .glyphicon{
+    margin-right: 5px;
+    font-size: 15px;
 
 }
 .categories .cat{
