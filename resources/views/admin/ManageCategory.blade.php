@@ -17,7 +17,7 @@
                 @foreach ($category as $cat)
                     <div class="cat">
                         <div class="hidden-buttens">
-                            <a href="/admin/editcategory" >
+                            <a href="/{{$language}}/admin/editcategory/{{$cat->id}}" >
                             <button class="btn btn-primary btn-l">  
                             <span class="glyphicon glyphicon-edit icon"></span>  Edit </button> 
                             </a>

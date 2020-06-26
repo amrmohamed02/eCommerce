@@ -23,7 +23,9 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/admin/managemember/{id?}',"UserController@manage");
     Route::any('/admin/pendingmember/{id?}',"UserController@pending");
     Route::any('/admin/addcategory',"ProductController@addcat");
-    Route::any('/admin/managecategory/{id?}',"ProductController@managecat");    
+    Route::any('/admin/managecategory/{id?}',"ProductController@managecat");
+    Route::any('/admin/editcategory/{id}',"ProductController@editcat");
+    Route::any('/admin/additem',"ProductController@additem");
     
 });
 

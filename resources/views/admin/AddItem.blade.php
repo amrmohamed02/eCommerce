@@ -36,7 +36,7 @@
                             name="description" 
                             placeholder="Item Description" 
                             class="form-control" 
-                            value="{{Request::Old('name')}}" />
+                            value="{{Request::Old('description')}}" />
                 </div>
         </div>
         <!---- end Description faild ---->
@@ -45,11 +45,11 @@
         <div class="form-group  form-group-lg ">
             <label class="col-sm-2 control-label " > Price </label>
                 <div class="col-sm-10 col-md-6">
-                    <input type="text" 
-                            name="Price" 
+                    <input type="number" 
+                            name="price" 
                             placeholder="Item Price" 
                             class="form-control" 
-                            value="{{Request::Old('name')}}" />
+                            value="{{Request::Old('price')}}" />
                 </div>
         </div>
         <!---- end Price faild ---->
@@ -62,7 +62,7 @@
                             name="country" 
                             placeholder="Country Made Name" 
                             class="form-control" 
-                            value="{{Request::Old('name')}}" />
+                            value="{{Request::Old('country')}}" />
                 </div>
         </div>
         <!---- end Country made faild ---->
@@ -72,10 +72,10 @@
             <label class="col-sm-2 control-label " > Status </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="status" class="form-control">
-                        <option value="0">....</option>
-                        <option value="1">New</option>
-                        <option value="2">Like New</option>
-                        <option value="3">Used</option>
+                        <option value="0">{{Request::Old('status')}}</option>
+                        <option value="New">New</option>
+                        <option value="Like New">Like New</option>
+                        <option value="Used">Used</option>
                     </select>
                 </div>
         </div>
