@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center">Pending Mambers</h1>
+<h1 class="text-center">  {{__('Pending')}} {{__('Member')}} </h1>
 
 <div class="container">
     <div class="table-responsive">

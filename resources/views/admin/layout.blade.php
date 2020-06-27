@@ -29,7 +29,9 @@
                   <li ><a href="/{{$language}}/admin/managemember" target="_blank">Members</a></li>
                   <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">Pending Members</a></li>
                   <li ><a href="/{{$language}}/admin/additem" target="_blank">Items</a></li>
-                  <li ><a href="#" target="_blank">Categores</a></li>
+                  <li ><a href="#" target="_blank">Comments</a></li>
+                  <li ><a href="#" target="_blank">Comments</a></li>
+                  <li ><a href="#" target="_blank">Comments</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
@@ -49,9 +51,7 @@
           
           @yield('index')
 {{-- start footer --}}
-        <div class="footer">
-        
-        </div>
+        <div class="footer"></div>
 
         <script src="/admin/js/admin.js"></script>
         <script src="/admin/js/jquery-3.5.1.min.js"></script>

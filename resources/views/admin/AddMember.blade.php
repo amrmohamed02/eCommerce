@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center" >Add New Member</h1>
+<h1 class="text-center" > {{__('Add')}} {{__('New')}} {{__('Member')}} </h1>
 
 <div class="container">
     @if ($errors->any())

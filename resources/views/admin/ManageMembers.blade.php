@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center">Manage Mambers</h1>
+<h1 class="text-center"> {{__('Manage')}} {{__('Member')}}</h1>
 
 <div class="container">
     <div class="table-responsive">
@@ -36,7 +36,7 @@
 
     </div>
 
-<a href="/{{$language}}/admin/addmember" class="btn btn-primary"> <i class="fa fa-plus"></i>New Members </a>
+<a href="/{{$language}}/admin/addmember" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span> New Members </a>
 
 
 </div>

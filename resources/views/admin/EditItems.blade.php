@@ -1,6 +1,6 @@
 @extends('admin/layout')
 @section('index')
-<h1 class="text-center">{{__('Add')}} {{__('New')}} {{__('Item')}} </h1>
+<h1 class="text-center">{{__('Edit')}} {{__('Itema')}}</h1>
 
 <div class="container">
     @if ($errors->any())
@@ -112,7 +112,7 @@
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
                 <button class="btn btn-primary btn-lg" type="submit">  
-                <span class="glyphicon glyphicon-plus-sign"></span>  Add New Item </button> 
+                <span class="glyphicon glyphicon-arrow-up"></span> Update </button> 
             </div>
         </div> 
 

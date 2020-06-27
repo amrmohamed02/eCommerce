@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center" >Add New Category</h1>
+<h1 class="text-center" > {{__('Add')}} {{__('New')}} {{__('Category')}}  </h1>
 
 <div class="container">
     @if ($errors->any())
@@ -18,7 +18,7 @@
         @csrf
         <!---- start category faild ---->
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " > Category Name </label>
+            <label class="col-sm-2 control-label " > Category Name </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="name" placeholder="Your Category Name" class="form-control" value="{{Request::Old('name')}}" />
             </div>
@@ -27,7 +27,7 @@
 
         <!---- start discription faild ---->
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > Description </label>
+            <label class="col-sm-2 control-label " > Description </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="description" placeholder="Your Description" class="form-control" value="{{Request::Old('description')}}"/>
             </div>

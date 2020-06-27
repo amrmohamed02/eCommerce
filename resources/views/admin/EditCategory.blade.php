@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center" >Edit Category</h1>
+<h1 class="text-center" > {{__('Edit')}} {{__('Category')}}</h1>
 
 <div class="container">
     @if ($errors->any())

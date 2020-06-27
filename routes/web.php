@@ -30,8 +30,8 @@ Route::group(['prefix' => '{language}'], function () {
 });
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
-Route::get('/admin/items',function()
+Route::get('en/admin/manageitems',function()
 {   //('/admin/edit') -> is the URL 
-    return view('admin/Items');
+    return view('admin/ManageItems');
     // ('admin/members')-> is the page that will open 
 });

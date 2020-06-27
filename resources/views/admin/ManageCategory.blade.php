@@ -1,7 +1,7 @@
 @extends('admin/layout')
 @section('index')
 
-<h1 class="text-center">Manage Categories</h1>
+<h1 class="text-center"> {{__('Manage')}} {{__('Categories')}}</h1>
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">  <h2> <span class="glyphicon glyphicon-edit icon"></span>Manage Categories</h2>
@@ -59,7 +59,7 @@
                 
             </div>
     </div>
-    <a href="/{{$language}}/admin/addcategory" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span>New Category </a>
+    <a href="/{{$language}}/admin/addcategory" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span> New Category </a>
 
 </div>
 <script type="text/javascript">

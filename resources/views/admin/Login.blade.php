@@ -9,10 +9,6 @@
         <input  class="form-control" type="password" name="password" placeholder="{{__('Password')}}" autocomplete="new-password" />
         <input  class="btn btn-primary btn-block" type="submit" name="submit" value="{{__('Login')}}"/>
 
-        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
-
     </form>
     
 @endsection
