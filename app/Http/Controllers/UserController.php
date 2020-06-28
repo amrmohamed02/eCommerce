@@ -36,7 +36,6 @@ class UserController extends Controller
         // }
 
         //registering a member
-        if(URL::current()==="http://localhost:8000/$language/admin/addmember"){
             if($request->isMethod('post')){
                 //commented for testing
                 // $this->validate($request,[
@@ -57,7 +56,6 @@ class UserController extends Controller
             else{
                 return view('admin.AddMember',["language"=>$language]);
             }
-        }
     }
     public function login(Request $request,$language)
     {
@@ -100,31 +98,29 @@ class UserController extends Controller
     public function edit(Request $request,$language,$id)
     {
         App::setLocale($language);
-        if(URL::current()==="http://localhost:8000/$language/admin/editmember/$id"){
-            $user =User::find($id);
-            if($request->isMethod('post')){
-                $user->name=$request->input('fullname');
-                $user->email=$request->input('email');
-                if($request->input('password'))
-                    $user->password=Hash::make($request->input('password'));
-                $user->username=$request->input('username');
-                $user->groupid=1;
-                $user->save();
-                return redirect("$language/admin/managemember");
-            }
-            else{
-                return view('admin.EditMembers',['user'=>$user]);
-            }
-        }  
+        $user =User::find($id);
+        if($request->isMethod('post')){
+            $user->name=$request->input('fullname');
+            $user->email=$request->input('email');
+            if($request->input('password'))
+                $user->password=Hash::make($request->input('password'));
+            $user->username=$request->input('username');
+            $user->groupid=1;
+            $user->save();
+            return redirect("$language/admin/managemember");
+        }
+        else{
+            return view('admin.EditMembers',['user'=>$user]);
+        } 
     }
 
     public function manage(Request $request,$language,$id=null)
     {
         App::setLocale($language);         
-        if(URL::current()==="http://localhost:8000/$language/admin/managemember/$id"){ 
+        if($request->isMethod('post')){ 
             $user =User::find($id);
             $user->forcedelete();
-            return redirect("$language/admin/managemember");
+            return redirect()->back();
         }
         else{
             $users=User::where("status","accepted")->get();
@@ -150,7 +146,7 @@ class UserController extends Controller
     public function pending(Request $request,$language,$id=null)
     {
         App::setLocale($language);
-        if(URL::current()==="http://localhost:8000/$language/admin/pendingmember/$id"){ 
+        if($request->isMethod('post')){ 
             $user =User::find($id);
             $user->status = "accepted";
             $user->save();

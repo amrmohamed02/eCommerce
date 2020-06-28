@@ -27,11 +27,10 @@
                         <td>
                             <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success"> 
                             <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}} </a>
-                            <a href="/{{$language}}/admin/managemember/{{$user->id}}" class="btn btn-danger confirm" onclick="return confirmation()">
-                            <span class="glyphicon glyphicon-remove"></span>  {{__('Delete')}} </a>
-                            <button class="btn btn-info"  type="submit">
-                            <a href="/{{$language}}/admin/pendingmember/{{$user->id}}" >
-                            <span class="glyphicon glyphicon-ok"></span> {{__('Accept')}} </a> </button>
+                            <button class="btn btn-danger"  type="submit" formaction="/{{$language}}/admin/managemember/{{$user->id}}" onclick="return confirmation()">
+                            <span class="glyphicon glyphicon-remove"></span>  {{__('Delete')}}</button>
+                            <button class="btn btn-info"  type="submit" formaction="/{{$language}}/admin/pendingmember/{{$user->id}}">
+                            <span class="glyphicon glyphicon-ok"></span> {{__('Accept')}}</button>
                         </td>
                     </tr>
                 </form>

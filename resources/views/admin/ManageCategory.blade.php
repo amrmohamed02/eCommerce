@@ -15,6 +15,8 @@
         </div>
             <div class="panel-body categories">
                 @foreach ($category as $cat)
+                <form method="POST" action="/{{$language}}/admin/managecategory/{{$cat->id}}">
+                    @csrf
                     <div class="cat">
                         <div class="hidden-buttens">
                             
@@ -22,10 +24,8 @@
                             <a href="/{{$language}}/admin/editcategory/{{$cat->id}}" >  
                             <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}  </button> 
                             </a>
-                        <a href="/{{$language}}/admin/managecategory/{{$cat->id}}" >
                             <button class="btn btn-danger btn-l" onclick="return confirmation()"  type="submit">  
-                            <span class="glyphicon glyphicon-remove icon"></span> {{__('Delete')}}  </button> 
-                            </a>
+                            <span class="glyphicon glyphicon-remove icon"></span> {{__('Delete')}}  </button>
                         </div>
                         
                         <h3>{{$cat->name}}</h3>
@@ -56,6 +56,7 @@
                         </div>
                     </div>
                     <hr/>
+                </form>
                 @endforeach
                 
             </div>

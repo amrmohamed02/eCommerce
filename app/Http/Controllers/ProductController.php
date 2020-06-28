@@ -39,7 +39,7 @@ class ProductController extends Controller
    public function managecat(Request $request,$language,$id=null)
    {
         App::setLocale($language);         
-        if(URL::current()==="http://localhost:8000/$language/admin/managecategory/$id"){
+        if($request->isMethod('post')){
             $user =Category::find($id);
             $user->forcedelete();
             return redirect("$language/admin/managecategory");
