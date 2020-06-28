@@ -28,7 +28,7 @@
                   <li ><a href="/{{$language}}/admin/managecategory" target="_blank"> {{__('Categores')}}</a></li>
                   <li ><a href="/{{$language}}/admin/managemember" target="_blank"> {{__('Members')}}</a></li>
                   <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">{{__('Pending')}}{{__('Members')}} </a></li>
-                  <li ><a href="/{{$language}}/admin/additem" target="_blank">{{__('Items')}}</a></li>
+                  <li ><a href="/{{$language}}/admin/manageitem" target="_blank">{{__('Items')}}</a></li>
                   <li ><a href="#" target="_blank"> {{__('Edit')}}Comments</a></li>
                   <li ><a href="#" target="_blank"> {{__('Edit')}}Comments</a></li>
                   <li ><a href="#" target="_blank"> {{__('Edit')}} Comments</a></li>

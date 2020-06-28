@@ -1,14 +1,10 @@
 @extends('admin/layout')
 @section('index')
-<<<<<<< HEAD
+
 <h1 class="text-center">{{__('Add')}} {{__('New')}} {{__('Item')}} </h1>
 <?php 
     use App\User;
     use App\Category;
-=======
-<h1 class="text-center"> {{__('Add')}} {{__('New')}} {{__('Item')}} </h1>
->>>>>>> df0a523f69b7c937cf9aa04fac3af63fdcdc0a19
-
 ?>
 <div class="container">
     @if ($errors->any())

@@ -91,7 +91,7 @@ class ProductController extends Controller
             $item->country=$request->input('country');
             $item->status=$request->input('status');
             $item->user_id=$request->input('user_id');
-            $item->cat_id=$request->input('cat_id');
+            $item->category_id=$request->input('category_id');
             $item->save();
             return redirect("$language/admin/additem");
         }
@@ -118,4 +118,26 @@ class ProductController extends Controller
                 return view('admin.EditItem',['item'=>$item,"language"=>$language,"cats"=>$cats,"users"=>$users]);
             }  
     }
+
+    public function manageitem(Request $request,$language,$id=null)
+   {
+        App::setLocale($language);         
+        if($request->isMethod('post')){
+                $item =Item::find($id);
+                $item->forcedelete();
+                return redirect("$language/admin/manageitem");
+         }
+         else{
+            $items=Item::all();
+            return view('admin.ManageItems',["language"=>$language,"items"=>$items]);
+         }
+   }
+
+   public function approveitem($language,$id)
+   {
+        $item =Item::find($id);
+        $item->approve=1;
+        $item->save();
+        return redirect("$language/admin/manageitem");
+   }
 }
