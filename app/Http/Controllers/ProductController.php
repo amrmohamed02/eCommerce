@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Item;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
@@ -45,7 +46,7 @@ class ProductController extends Controller
          }
          else{
             $category=Category::all();
-            return view('admin.ManageCategory',["language"=>$language],["category"=>$category]);
+            return view('admin.ManageCategory',["language"=>$language,"category"=>$category]);
          }
    }
 
@@ -60,8 +61,6 @@ class ProductController extends Controller
                 $cat->visibilty=$request->input('visibilty');
                 $cat->allow_comment=$request->input('commenting');
                 $cat->allow_ads=$request->input('Ads');
-
-
                 $cat->save();
                 return redirect("$language/admin/managecategory");
             }
@@ -74,7 +73,9 @@ class ProductController extends Controller
    {
         App::setLocale($language);
         if($request->isMethod('get')){
-           return view('admin.AddItem',["language"=>$language]);
+            $users = User::where('status','accepted')->where('groupid',1)->get();
+            $cats = Category::all();
+           return view('admin.AddItem',["language"=>$language,"cats"=>$cats,"users"=>$users]);
         }
         elseif($request->isMethod('post')){
         //     $this->validate($request,[
@@ -89,8 +90,32 @@ class ProductController extends Controller
             $item->price=$request->input('price');
             $item->country=$request->input('country');
             $item->status=$request->input('status');
+            $item->user_id=$request->input('user_id');
+            $item->cat_id=$request->input('cat_id');
             $item->save();
             return redirect("$language/admin/additem");
         }
    }
+
+   public function edititem(Request $request,$language,$id)
+    {
+        App::setLocale($language);
+            $item =Item::find($id);
+            $users = User::where('status','accepted')->where('groupid',1)->get();
+            $cats = Category::all();
+            if($request->isMethod('post')){
+                $item->name=$request->input('name');
+                $item->description=$request->input('description');
+                $item->price=$request->input('price');
+                $item->country=$request->input('country');
+                $item->status=$request->input('status');
+                $item->user_id=$request->input('user_id');
+                $item->category_id=$request->input('category_id');
+                $item->save();
+                return redirect("$language/admin/manageitem");
+            }
+            else{
+                return view('admin.EditItem',['item'=>$item,"language"=>$language,"cats"=>$cats,"users"=>$users]);
+            }  
+    }
 }

@@ -134,27 +134,22 @@ class UserController extends Controller
 
     public function welcome(Request $request,$language)
     {
-         App::setLocale($language);
-         return view('admin.Dashboard');
-        if(URL::current()==="http://localhost:8000/$language/admin/dashboard"){
-            if($request->isMethod('get')){
-                if(!session('userid')){
-                    return redirect("$language/admin/login");
-                }
-                else{
-                    $users = User::orderBy('id', 'DESC')->get();
-                    $pending = User::where("status","pending")->count();
-                    // $posts = Post::orderBy('id', 'DESC')->get();
-                    return view('admin.Dashboard',["language"=>$language,"users"=>$users,"pending"=>$pending]);
-                }
-                
+        App::setLocale($language);
+        if($request->isMethod('get')){
+            if(!session('userid')){
+                return redirect("$language/admin/login");
+            }
+            else{
+                $users = User::orderBy('id', 'DESC')->get();
+                $pending = User::where("status","pending")->count();
+                return view('admin.Dashboard',["language"=>$language,"users"=>$users,"pending"=>$pending]);
             }
         }
     }
 
     public function pending(Request $request,$language,$id=null)
     {
-        App::setLocale($language);         
+        App::setLocale($language);
         if(URL::current()==="http://localhost:8000/$language/admin/pendingmember/$id"){ 
             $user =User::find($id);
             $user->status = "accepted";

@@ -15,11 +15,17 @@ class CreateItem extends Migration
     {
         Schema::create('item', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('description');
             $table->integer('price');
             $table->string('country');
+            $table->string('image')->nullable();
             $table->string('status');
+            $table->smallInteger('rating')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('category');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('user');
             $table->timestamps();
         });
     }

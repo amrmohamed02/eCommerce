@@ -1,6 +1,6 @@
 @extends('admin/layout')
 @section('index')
-<h1 class="text-center">{{__('Edit')}} {{__('Itema')}}</h1>
+<h1 class="text-center">{{__('Edit')}} {{__('Item')}}</h1>
 
 <div class="container">
     @if ($errors->any())
@@ -23,7 +23,7 @@
                             name="name" 
                             placeholder="Your Item Name"
                             class="form-control" 
-                            value="{{Request::Old('name')}}" />
+                            value="{{$item->name}}" />
                 </div>
         </div>
         <!---- end category faild ---->
@@ -36,7 +36,7 @@
                             name="description" 
                             placeholder="Item Description" 
                             class="form-control" 
-                            value="{{Request::Old('description')}}" />
+                            value="{{$item->description}}" />
                 </div>
         </div>
         <!---- end Description faild ---->
@@ -47,9 +47,8 @@
                 <div class="col-sm-10 col-md-6">
                     <input type="number" 
                             name="price" 
-                            placeholder="Item Price" 
                             class="form-control" 
-                            value="{{Request::Old('price')}}" />
+                            value="{{$item->price}}" />
                 </div>
         </div>
         <!---- end Price faild ---->
@@ -60,9 +59,8 @@
                 <div class="col-sm-10 col-md-6">
                     <input type="text" 
                             name="country" 
-                            placeholder="Country Made Name" 
                             class="form-control" 
-                            value="{{Request::Old('country')}}" />
+                            value="{{$item->country}}" />
                 </div>
         </div>
         <!---- end Country made faild ---->
@@ -72,7 +70,7 @@
             <label class="col-sm-2 control-label " > Status </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="status" class="form-control">
-                        <option value="0">{{Request::Old('status')}}</option>
+                        <option value="{{$item->status}}">{{$item->status}}</option>
                         <option value="New">New</option>
                         <option value="Like New">Like New</option>
                         <option value="Used">Used</option>
@@ -86,10 +84,11 @@
             <label class="col-sm-2 control-label " > Member Name </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="member-name" class="form-control">
-                        <option value="0">...</option>
-                        <option value="0">mohamed</option>
-                        <option value="1">ahmed</option>
-                        <option value="2">ali</option>
+                  
+                        <option value="{{$item->user->id}}">{{$item->user->name}}</option>
+                        @foreach ($users as $user)
+                        <option value="{{$user->id}}">{{$user->name}}</option>
+                        @endforeach
                     </select>
                 </div>
         </div>
@@ -99,11 +98,11 @@
         <div class="form-group  form-group-lg ">
             <label class="col-sm-2 control-label " > Category Name </label>
                 <div class="col-sm-10 col-md-6">
-                    <select name="category-name" class="form-control">
-                        <option value="0">...</option>
-                        <option value="0">mohamed</option>
-                        <option value="1">ahmed</option>
-                        <option value="2">ali</option>
+                    <select name="category_id" class="form-control">
+                        <option value="{{$item->category->id}}">{{$item->category->name}}</option>
+                        @foreach ($cats as $cat)
+                        <option value="{{$cat->id}}">{{$cat->name}}</option>
+                        @endforeach
                     </select>
                 </div>
         </div>
