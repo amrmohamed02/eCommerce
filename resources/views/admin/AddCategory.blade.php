@@ -18,7 +18,7 @@
         @csrf
         <!---- start category faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Category Name </label>
+            <label class="col-sm-2 control-label " > {{__('Category')}} {{__('Name')}} </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="name" placeholder="Your Category Name" class="form-control" value="{{Request::Old('name')}}" />
             </div>
@@ -27,7 +27,7 @@
 
         <!---- start discription faild ---->
         <div class="form-group form-group-lg ">
-            <label class="col-sm-2 control-label " > Description </label>
+            <label class="col-sm-2 control-label " >{{__('Description')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="description" placeholder="Your Description" class="form-control" value="{{Request::Old('description')}}"/>
             </div>
@@ -37,7 +37,7 @@
         
         <!---- start Ordering faild ---->
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > Ordering </label>
+             <label class="col-sm-2 control-label " >{{__('Ordering')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <input type="number" name="ordering" class="form-control" placeholder="Your Order" value="{{Request::Old('ordering')}}"/>
             </div>
@@ -46,7 +46,7 @@
 
         <!---- start visibilty faild ---->
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > visibilty </label>
+             <label class="col-sm-2 control-label " >{{__('visibilty')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <div>
                     <input id="vis-yes" type="radio" name="visibilty" value="0" checked />
@@ -62,7 +62,7 @@
 
         <!---- start commenting faild ---->
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > Allow commenting  </label>
+             <label class="col-sm-2 control-label " >{{__('Allow')}} {{__('commenting')}} </label>
                 <div class="col-sm-10 col-md-6">
                 <div>
                     <input id="com-yes" type="radio" name="commenting" value="0" checked />
@@ -78,7 +78,7 @@
 
         <!---- start Ads faild ---->
             <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > Allow Ads </label>
+             <label class="col-sm-2 control-label " > {{__('Allow')}}{{__('Ads')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <div>
                     <input id="Ads-yes" type="radio" name="Ads" value="0" checked />
@@ -95,7 +95,7 @@
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
                 <button class="btn btn-primary btn-lg" type="submit">  
-                <span class="glyphicon glyphicon-plus-sign"></span>  Add Category </button> 
+                <span class="glyphicon glyphicon-plus-sign"></span>{{__('Add')}}{{__('Category')}} </button> 
             </div>
         </div> 
 

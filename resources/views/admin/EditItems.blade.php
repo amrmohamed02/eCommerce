@@ -17,7 +17,7 @@
         @csrf
         <!---- start category faild ---->
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " > Item Name </label>
+             <label class="col-sm-2 control-label " >{{__('Item')}}{{__('Name')}}   </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="text"
                             name="name" 
@@ -30,7 +30,7 @@
 
         <!---- start Description faild ---->
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " > Description </label>
+             <label class="col-sm-2 control-label " >{{__('Description')}}  </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="text" 
                             name="description" 
@@ -43,7 +43,7 @@
 
         <!---- start Price faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Price </label>
+            <label class="col-sm-2 control-label " >{{__('Price')}}  </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="number" 
                             name="price" 
@@ -56,7 +56,7 @@
 
         <!---- start Country made faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Country </label>
+            <label class="col-sm-2 control-label " >{{__('Country')}}  </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="text" 
                             name="country" 
@@ -69,7 +69,7 @@
 
         <!---- start Status faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Status </label>
+            <label class="col-sm-2 control-label " >{{__('Status')}}  </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="status" class="form-control">
                         <option value="0">{{Request::Old('status')}}</option>
@@ -83,7 +83,7 @@
 
         <!---- start member-selct faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Member Name </label>
+            <label class="col-sm-2 control-label " >{{__('Member')}}{{__('Name')}}   </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="member-name" class="form-control">
                         <option value="0">...</option>
@@ -97,7 +97,7 @@
 
         <!---- start category-selct faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Category Name </label>
+            <label class="col-sm-2 control-label " > {{__('Category')}}{{__('Name')}}  </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="category-name" class="form-control">
                         <option value="0">...</option>
@@ -112,7 +112,7 @@
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
                 <button class="btn btn-primary btn-lg" type="submit">  
-                <span class="glyphicon glyphicon-arrow-up"></span> Update </button> 
+                <span class="glyphicon glyphicon-arrow-up"></span>{{__('Update')}}  </button> 
             </div>
         </div> 
 

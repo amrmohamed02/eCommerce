@@ -4,12 +4,12 @@
 <h1 class="text-center"> {{__('Manage')}} {{__('Categories')}}</h1>
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading">  <h2> <span class="glyphicon glyphicon-edit icon"></span>Manage Categories</h2>
+        <div class="panel-heading">  <h2> <span class="glyphicon glyphicon-edit icon"></span> {{__('Manage')}}{{__('Categories')}} </h2>
             <div class="option pull-right">
-            <span class="glyphicon glyphicon-sort"></span> Ordering : [
-            <a href="#" class="active">Asc</a> | <a href="#">Desc</a> ]
-            <span class="glyphicon glyphicon-eye-open"></span>View : [
-            <span>Classic</span> | <span class="active">Full</span> ]
+            <span class="glyphicon glyphicon-sort"></span>{{__('Ordering')}}  : [
+            <a href="#" class="active"> {{__('Asc')}}</a> | <a href="#"> {{__('Desc')}}</a> ]
+            <span class="glyphicon glyphicon-eye-open"></span> {{__('View')}} : [
+            <span> {{__('Classic')}}</span> | <span class="active"> {{__('Full')}}</span> ]
             </div>
         
         </div>
@@ -17,13 +17,14 @@
                 @foreach ($category as $cat)
                     <div class="cat">
                         <div class="hidden-buttens">
-                            <a href="/{{$language}}/admin/editcategory/{{$cat->id}}" >
-                            <button class="btn btn-primary btn-l">  
-                            <span class="glyphicon glyphicon-edit icon"></span>  Edit </button> 
+                            
+                            <button class="btn btn-primary btn-l"  type="submit">
+                            <a href="/{{$language}}/admin/editcategory/{{$cat->id}}" >  
+                            <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}  </button> 
                             </a>
                         <a href="/{{$language}}/admin/managecategory/{{$cat->id}}" >
-                            <button class="btn btn-danger btn-l" onclick="return confirmation()">  
-                            <span class="glyphicon glyphicon-remove icon"></span>  Delete </button> 
+                            <button class="btn btn-danger btn-l" onclick="return confirmation()"  type="submit">  
+                            <span class="glyphicon glyphicon-remove icon"></span> {{__('Delete')}}  </button> 
                             </a>
                         </div>
                         
@@ -36,21 +37,21 @@
                             @endif
                             
                             @if ($cat->visibilty=='1')
-                                <span class="visibility"> <span class="glyphicon glyphicon-eye-close"></span>Hidden  </span>
+                                <span class="visibility"> <span class="glyphicon glyphicon-eye-close"></span> {{__('Hidden')}}  </span>
                             @else
-                                <span class="visibility"> <span class="glyphicon glyphicon-eye-open"></span>showen  </span>
+                                <span class="visibility"> <span class="glyphicon glyphicon-eye-open"></span> {{__('showen')}}  </span>
                             @endif
                             
                             @if ($cat->allow_comment=='1')
-                                <span class="Comment"> <span class="glyphicon glyphicon-remove"></span>Comments Disabled  </span>
+                                <span class="Comment"> <span class="glyphicon glyphicon-remove"></span> {{__('Comments')}}{{__('Disabled')}}   </span>
                             @else
-                                <span class="Comment"> <span class="glyphicon glyphicon-comment"></span>Comments Enabled  </span>
+                                <span class="Comment"> <span class="glyphicon glyphicon-comment"></span> {{__('Comments')}}{{__('Enabled')}}   </span>
                             @endif
 
                             @if ($cat->allow_ads=='1')
-                                <span class="ads"> <span class="glyphicon glyphicon-facetime-remove"></span>Ads Disabled  </span>
+                                <span class="ads"> <span class="glyphicon glyphicon-facetime-remove"></span> {{__('Ads')}}{{__('Disabled')}} </span>
                             @else
-                                <span class="ads"> <span class="glyphicon glyphicon-facetime-video"></span>Ads Enabled  </span>
+                                <span class="ads"> <span class="glyphicon glyphicon-facetime-video"></span> {{__('Ads')}}{{__('Enabled')}}   </span>
                             @endif
                         </div>
                     </div>
@@ -59,7 +60,7 @@
                 
             </div>
     </div>
-    <a href="/{{$language}}/admin/addcategory" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span> New Category </a>
+    <a href="/{{$language}}/admin/addcategory" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span>{{__('New')}}{{__('Category')}}   </a>
 
 </div>
 <script type="text/javascript">

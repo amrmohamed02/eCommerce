@@ -8,12 +8,12 @@
         <table class=" main-table text-center table table-bordered">
 
             <tr>
-                <td>#ID</td>
-                <td>Username</td>
-                <td>Email</td>
-                <td>Fullname</td>
-                <td>Register Date </td>
-                <td>Control</td>
+                <td> {{__('#ID ')}} </td>
+                <td>  {{__('Username')}}</td>
+                <td> {{__('Email')}}</td>
+                <td> {{__('Fullname')}}</td>
+                <td>   {{__('Register')}} {{__('Date')}}</td>
+                <td> {{__('Control')}}</td>
             </tr>
             @foreach ($users as $user)
                 <form method="POST" >
@@ -25,9 +25,13 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->created_at}}</td>
                         <td>
-                            <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success">Edit</a>
-                            <a href="/{{$language}}/admin/managemember/{{$user->id}}" class="btn btn-danger confirm" onclick="return confirmation()">Delete</a>
-                            <a href="/{{$language}}/admin/pendingmember/{{$user->id}}" class="btn btn-info">Accept</a>
+                            <a href="/{{$language}}/admin/editmember/{{$user->id}}" class="btn btn-success"> 
+                            <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}} </a>
+                            <a href="/{{$language}}/admin/managemember/{{$user->id}}" class="btn btn-danger confirm" onclick="return confirmation()">
+                            <span class="glyphicon glyphicon-remove"></span>  {{__('Delete')}} </a>
+                            <button class="btn btn-info"  type="submit">
+                            <a href="/{{$language}}/admin/pendingmember/{{$user->id}}" >
+                            <span class="glyphicon glyphicon-ok"></span> {{__('Accept')}} </a> </button>
                         </td>
                     </tr>
                 </form>
