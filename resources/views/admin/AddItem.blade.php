@@ -1,9 +1,13 @@
 @extends('admin/layout')
 @section('index')
+<<<<<<< HEAD
 <h1 class="text-center">{{__('Add')}} {{__('New')}} {{__('Item')}} </h1>
 <?php 
     use App\User;
     use App\Category;
+=======
+<h1 class="text-center"> {{__('Add')}} {{__('New')}} {{__('Item')}} </h1>
+>>>>>>> df0a523f69b7c937cf9aa04fac3af63fdcdc0a19
 
 ?>
 <div class="container">
@@ -21,7 +25,7 @@
         @csrf
         <!---- start category faild ---->
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " > Item Name </label>
+             <label class="col-sm-2 control-label " >    {{__('Item')}} {{__('Name')}} </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="text"
                             name="name" 
@@ -34,7 +38,7 @@
 
         <!---- start Description faild ---->
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " > Description </label>
+             <label class="col-sm-2 control-label " >   {{__('Description')}}</label>
                 <div class="col-sm-10 col-md-6">
                     <input type="text" 
                             name="description" 
@@ -47,7 +51,7 @@
 
         <!---- start Price faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Price </label>
+            <label class="col-sm-2 control-label " >  {{__('Price')}} </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="number" 
                             name="price" 
@@ -60,7 +64,7 @@
 
         <!---- start Country made faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Country </label>
+            <label class="col-sm-2 control-label " >  {{__('Country')}} </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="text" 
                             name="country" 
@@ -73,7 +77,7 @@
 
         <!---- start Status faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Status </label>
+            <label class="col-sm-2 control-label " >   {{__('Status')}}</label>
                 <div class="col-sm-10 col-md-6">
                     <select name="status" class="form-control">
                         <option value="{{Request::Old('status')}}">{{Request::Old('status')}}</option>
@@ -87,7 +91,7 @@
 
         <!---- start member-selct faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Member Name </label>
+            <label class="col-sm-2 control-label " > {{__('Member')}} {{__('Name')}}  </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="user_id" class="form-control">
                         <option value="{{User::where('name','Request::Old("user_id")')->get('id')}}">{{Request::Old('user_id')}}</option>
@@ -101,7 +105,7 @@
 
         <!---- start category-selct faild ---->
         <div class="form-group  form-group-lg ">
-            <label class="col-sm-2 control-label " > Category Name </label>
+            <label class="col-sm-2 control-label " > {{__('Category')}} {{__('Name')}} </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="category_id" class="form-control">
                         <option value="{{Category::where('name','Request::Old("category_id")')->get('id')}}">{{Request::Old('category_id')}}</option>
@@ -116,7 +120,7 @@
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
                 <button class="btn btn-primary btn-lg" type="submit">  
-                <span class="glyphicon glyphicon-plus-sign"></span>  Add New Item </button> 
+                <span class="glyphicon glyphicon-plus-sign"></span> {{__('Add')}} {{__('New')}} {{__('Item')}}</button> 
             </div>
         </div> 
 

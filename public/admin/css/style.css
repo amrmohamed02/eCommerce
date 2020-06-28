@@ -140,8 +140,12 @@ h1{
 
 }
 
-.main-table .btn{
+.main-table .btn {
     padding: 3px 10px;
+}
+.main-table .btn a{
+    text-decoration: none;
+    color: #fff;
 }
 
 /* end members */
@@ -201,6 +205,8 @@ h1{
 }
 .categories .cat .hidden-buttens a{
     margin-right: 5px;
+    text-decoration: none;
+    color: #fff;
 }
 .categories .cat .hidden-buttens .icon{
     font-size: 12px;
@@ -237,5 +243,11 @@ h1{
 }
 
 /* end category page */
+
+/* end manage items page */
+
+
+
+/* end manage itens page */
 
 

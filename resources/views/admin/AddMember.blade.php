@@ -18,21 +18,21 @@
         @csrf
 
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " > Username </label>
+             <label class="col-sm-2 control-label " >  {{__('Username')}} </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="username" class="form-control" value="{{Request::Old('username')}}" />
             </div>
         </div>
 
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > Password </label>
+             <label class="col-sm-2 control-label " >   {{__('Password')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <input type="password" name="password" class="form-control" value="{{Request::Old('password')}}"/>
             </div>
         </div>        
 
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > E-mail </label>
+             <label class="col-sm-2 control-label " > {{__('E-mail')}} </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="email" name="email" class="form-control" value="{{Request::Old('email')}}"/>
             </div>
@@ -40,7 +40,7 @@
 
 
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > Fullname </label>
+             <label class="col-sm-2 control-label " >  {{__('Fullname')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="fullname" class="form-control" value="{{Request::Old('fullname')}}"/>
             </div>

@@ -21,25 +21,25 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/{{$language}}/admin/dashboard">Home</a>
+                <a class="navbar-brand" href="/{{$language}}/admin/dashboard"> {{__('Home')}} </a>
               </div>
               <div class="collapse navbar-collapse" id="app-nav">
                 <ul class="nav navbar-nav">
-                  <li ><a href="/{{$language}}/admin/managecategory" target="_blank">Categores</a></li>
-                  <li ><a href="/{{$language}}/admin/managemember" target="_blank">Members</a></li>
-                  <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">Pending Members</a></li>
-                  <li ><a href="/{{$language}}/admin/additem" target="_blank">Items</a></li>
-                  <li ><a href="#" target="_blank">Comments</a></li>
-                  <li ><a href="#" target="_blank">Comments</a></li>
-                  <li ><a href="#" target="_blank">Comments</a></li>
+                  <li ><a href="/{{$language}}/admin/managecategory" target="_blank"> {{__('Categores')}}</a></li>
+                  <li ><a href="/{{$language}}/admin/managemember" target="_blank"> {{__('Members')}}</a></li>
+                  <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">{{__('Pending')}}{{__('Members')}} </a></li>
+                  <li ><a href="/{{$language}}/admin/additem" target="_blank">{{__('Items')}}</a></li>
+                  <li ><a href="#" target="_blank"> {{__('Edit')}}Comments</a></li>
+                  <li ><a href="#" target="_blank"> {{__('Edit')}}Comments</a></li>
+                  <li ><a href="#" target="_blank"> {{__('Edit')}} Comments</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Username <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Edit Profail</a></li>
-                      <li><a href="#">Settings</a></li>
-                    <li><a href="/{{$language}}/admin/logout">LogOut</a></li>
+                      <li><a href="#"> {{__('Edit')}}{{__('Profail')}}</a></li>
+                      <li><a href="#"> {{__('Settings')}}</a></li>
+                    <li><a href="/{{$language}}/admin/logout"> {{__('LogOut')}}</a></li>
                     </ul>
                   </li>
                 </ul>
