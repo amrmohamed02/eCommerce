@@ -13,6 +13,7 @@
             </ul>
         </div>
     @endif
+    
 
     <form class="form-horizontal" method="POST">
         @csrf
@@ -31,18 +32,18 @@
                 <div class="col-sm-10 col-md-6">
                 <input type="text" name="description" placeholder="Your Description" class="form-control" value="{{$cat->description}}"/>
             </div>
-        </div> 
-        <!---- end category faild ---->  
-        
-        
+        </div>
+        <!---- end category faild ---->
+
+
         <!---- start Ordering faild ---->
         <div class="form-group form-group-lg ">
              <label class="col-sm-2 control-label " >  {{__('Ordering')}}  </label>
                 <div class="col-sm-10 col-md-6">
                 <input type="number" name="ordering" class="form-control" placeholder="Your Order" value="{{$cat->ordering}}"/>
             </div>
-        </div> 
-        <!---- end Ordering faild ---->       
+        </div>
+        <!---- end Ordering faild ---->
 
         <!---- start visibilty faild ---->
         <div class="form-group form-group-lg ">
@@ -93,7 +94,7 @@
                         <input id="com-no" type="radio" name="commenting" value="1" checked />
                         <label for="com-no"> {{__('No')}} </label>
                     </div>
-                        
+
                     @endif
             </div>
         </div>
@@ -101,7 +102,7 @@
 
         <!---- start Ads faild ---->
             <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " >{{__('Edit')}}{{__('Edit')}} Allow Ads </label>
+             <label class="col-sm-2 control-label " >{{__('Allow')}}{{__('Ads')}}   </label>
                 <div class="col-sm-10 col-md-6">
                     @if ($cat->allow_ads==0)
                     <div>
@@ -122,17 +123,17 @@
                         <label for="Ads-no">{{__('No')}}</label>
                     </div>
                     @endif
-                    
+
             </div>
         </div>
-        <!---- end Ads faild ---->  
+        <!---- end Ads faild ---->
 
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
-                <button class="btn btn-primary btn-lg" type="submit">  
-                <span class="glyphicon glyphicon-arrow-up"></span> {{__('UP Date')}}  </button> 
+                <button class="btn btn-primary btn-lg" type="submit">
+                <span class="glyphicon glyphicon-arrow-up"></span> {{__('UP Date')}}  </button>
             </div>
-        </div> 
+        </div>
 
 
     </form>

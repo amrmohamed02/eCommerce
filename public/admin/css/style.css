@@ -71,6 +71,8 @@ body{
     border-radius: 20px;
     font-size: 20px;
     color: #EEE;
+    position: relative;
+    overflow: hidden;
 
 }
 .home-stats .stat a{
@@ -83,6 +85,12 @@ body{
 }
 .home-stats .st-members{
     background-color: #fe8a71; 
+}
+.home-stats .stat .info{
+    float: right;
+}
+.home-stats .stat  .icon{
+    top: 25px;
 }
 .home-stats .st-pending{
     background-color: #3da4ab;
@@ -115,6 +123,13 @@ body{
 }
 .latest-user li .btn{
     padding: 0px 5px;
+}
+.latest-user button a {
+    text-decoration: none;
+    color: #fff;
+}
+.latest-user button{
+    margin-right: 5px;
 }
 
 
@@ -152,8 +167,9 @@ h1{
 
 /* start category page */
 .container .panel-heading .icon{
-    font-size: 25px;
-    margin-right: 4px;
+    font-size: 20px;
+    margin-right: 10px;
+    top: 4px;
 }
 
 .option{
