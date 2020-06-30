@@ -7,41 +7,37 @@
         <table class=" main-table text-center table table-bordered">
 
             <tr>
-                <td> {{__('#ID')}}</td>
+                <td> #{{__('ID')}}</td>
                 <td>  {{__('Comment')}}</td>
                 <td>  {{__('Item Name')}}</td>
                 <td>  {{__('User Name')}}</td>
-                <td>   {{__('Added')}} {{__('Date')}}</td>
-                <td> {{__('Control')}}</td>
+                <td>  {{__('Added')}} {{__('Date')}}</td>
+                <td>  {{__('Control')}}</td>
             </tr>
-
-            <form>
-                  
+            @foreach ($comments as $comment)
+            <form method="POST" action="/{{$language}}/admin/comments/{{$comment->id}}">
+                @csrf
                 <tr>
-                    <td>1</td>
-                    <td>this is my comment</td>
-                    <td>item name</td>
-                    <td>mohamed ali</td>
-                    <td>1111</td>
-                    <td>
-                        <a href="/admin/editmember" class="btn btn-success">
-                        <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}} </a>
-
-
-                        <button class="btn btn-danger confirm" type="submit" onclick="return confirmation()">
-                        <span class="glyphicon glyphicon-remove"></span> {{__('Delete')}}
-                        </button>
-
-                        <button class="btn btn-info "  type="submit">
-                        <a href="" > <span class="glyphicon glyphicon-ok icon"></span>{{__('Approve')}} </a>
-                        </button> 
-
-                    </td>
-                </tr>
-            </form>
- 
+                <td>{{$comment->id}}</td>
+                <td>{{$comment->comment}}</td>
+                <td>{{$comment->item->name}}</td>
+                <td>{{$comment->user->name}}</td>
+                <td>{{$comment->created_at}}</td>
+                <td>
+                    <a href="/{{$language}}/admin/editcomment/{{$comment->id}}" class="btn btn-success">
+                    <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a>
+                    <button class="btn btn-danger" type="submit" onclick="return confirmation()"> 
+                    <span class="glyphicon glyphicon-remove"></span>{{__('Delete')}} </button>
+                    @if ($comment->status==0)
+                        <a class="btn btn-info" href="/admin/approvecomment/{{$comment->id}}">
+                        <span class="glyphicon glyphicon-ok"></span>{{__('Approve')}}
+                        </a>
+                    @endif
+                </td>
+            </tr>
+        </form>
+        @endforeach
         </table>
-
     </div>
 
 

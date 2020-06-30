@@ -28,7 +28,7 @@
                         <button class="btn btn-danger" type="submit" onclick="return confirmation()"> 
                         <span class="glyphicon glyphicon-remove"></span>{{__('Delete')}} </button>
                         @if ($item->approve==0)
-                            <a class="btn btn-info" href="/{{$language}}/admin/approveitem/{{$item->id}}">
+                            <a class="btn btn-info" href="/admin/approveitem/{{$item->id}}">
                             <span class="glyphicon glyphicon-ok"></span>{{__('Approve')}}
                             </a>
                         @endif

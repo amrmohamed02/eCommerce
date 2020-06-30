@@ -40,8 +40,8 @@ class ProductController extends Controller
    {
         App::setLocale($language);         
         if($request->isMethod('post')){
-            $user =Category::find($id);
-            $user->forcedelete();
+            $cat =Category::find($id);
+            $cat->forcedelete();
             return redirect("$language/admin/managecategory");
          }
          else{
@@ -125,7 +125,7 @@ class ProductController extends Controller
         if($request->isMethod('post')){
                 $item =Item::find($id);
                 $item->forcedelete();
-                return redirect("$language/admin/manageitem");
+                return redirect()->back();
          }
          else{
             $items=Item::all();
@@ -133,11 +133,11 @@ class ProductController extends Controller
          }
    }
 
-   public function approveitem($language,$id)
+   public function approveitem($id)
    {
         $item =Item::find($id);
         $item->approve=1;
         $item->save();
-        return redirect("$language/admin/manageitem");
+        return redirect()->back();
    }
 }

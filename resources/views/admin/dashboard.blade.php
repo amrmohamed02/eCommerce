@@ -33,7 +33,7 @@
                 <span class="glyphicon glyphicon-tags icon pull-left"></span>
                 <div class="info">
                     {{__('Total')}} {{__('Items')}}
-                    <span><a href="/{{$language}}/admin/managemember">1300</a></span>
+                <span><a href="/{{$language}}/admin/manageitem">{{count($items)}}</a></span>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 <span class="glyphicon glyphicon-comment icon pull-left"></span>
                 <div class="info">
                     {{__('Total')}} {{__('Comments')}}
-                    <span><a href="/{{$language}}/admin/managemember">3000</a></span>
+                    <span><a href="/{{$language}}/admin/comments">{{count($comments)}}</a></span>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,8 @@
                             @foreach($users as $user)
                                 @if ($i<5)
                                     <li> {{$user->name}} <span class="btn btn-success pull-right"><a href="/{{$language}}/admin/editmember/{{$user->id}}">  
-                                    <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span></li>
+                                    <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span>
+                                    </li>
                                     <?php ++$i;?>
                                 @endif
                             @endforeach 
@@ -84,14 +85,21 @@
                     </div>
                     <div class="panel-body">
                         <ul class="list-unstyled latest-user">
-                        
-                            <li> itemname <span class="btn btn-success pull-right"><a href="/{{$language}}/admin/edititems/{{$user->id}}">  
-                            <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span>
-
-                            <button class="btn btn-info pull-right "  type="submit">
-                            <a href="" > <span class="glyphicon glyphicon-ok icon"></span>{{__('Approve')}} </a>
-                            </button> 
-                        </li>
+                            <?php $i=0;?>
+                            @foreach($items as $item)
+                                @if ($i<5)
+                                    <li> {{$item->name}} <span class="btn btn-success pull-right"><a href="/{{$language}}/admin/edititem/{{$item->id}}">  
+                                    <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span>
+                                    @if ($item->approve==0)
+                                    <button class="btn btn-info pull-right "  type="submit">
+                                    <a class="btn btn-info" href="/admin/approveitem/{{$item->id}}"> <span class="glyphicon glyphicon-ok icon"></span>{{__('Approve')}} </a>
+                                    </button> 
+                                    @endif
+                                    </li>
+                                    <?php ++$i;?>
+                                @endif
+                            @endforeach
+                        </ul>
                 </div>
             </div>
         </div>
@@ -104,46 +112,28 @@
                     </div>
                     <div class="panel-body">
                         <ul class="list-unstyled latest-user">
-                             <!-- <?php $i=0;?>
-                            @foreach($users as $user)
-                                @if ($i<5) -->
-                          
+                            <?php $i=0;?>
+                            @foreach($comments as $comment)
+                                @if ($i<5)
+                                <form >
+                                    @csrf
                                     <div class="comment-box"> 
-                                        <span class="member-name"><a href="/{{$language}}/admin/editmember" target="_blank">member name</a></span>
-                                        <p class="member-com">member comment member comment member comment
-                                        member commentmember commentmember commentmembe commentmembercomment</p>     
+                                    <span class="member-name"><a href="/{{$language}}/admin/editmember/{{$comment->user->id}}" target="_blank">{{$comment->user->name}}</a></span>
+                                    <p class="member-com">{{$comment->comment}}</p>     
                                         
                                         <button class="btn btn-success pull-right "  type="submit">
-                                            <a href="" > <span class="glyphicon glyphicon-edit icon"></span>{{__('Edit')}} </a>
+                                        <a href="/{{$language}}/admin/editcomment/{{$comment->id}}" > <span class="glyphicon glyphicon-edit icon"></span>{{__('Edit')}} </a>
                                         </button> 
 
-                                        <button class="btn btn-danger pull-right "  type="submit">
-                                            <a href="" > <span class="glyphicon glyphicon-remove icon"></span>{{__('Delete')}} </a>
-                                        </button> 
-                                    </div>
-
-                                    <div class="comment-box"> 
-                                        <span class="member-name"><a href="/{{$language}}/admin/editmember" target="_blank">member name</a></span>
-                                        <p class="member-com">member comment member comment member comment
-                                        member commentmember commentmember commentmembe commentmembercomment</p>     
-                                        
-                                        <button class="btn btn-success pull-right "  type="submit">
-                                            <a href="" > <span class="glyphicon glyphicon-edit icon"></span>{{__('Edit')}} </a>
-                                        </button> 
-                                        <button class="btn btn-danger pull-right "  type="submit">
-                                            <a href="" > <span class="glyphicon glyphicon-remove icon"></span>{{__('Delete')}} </a>
+                                        <button onclick="return confirmation()" class="btn btn-danger pull-right " formmethod="POST" formaction="/{{$language}}/admin/comments/{{$comment->id}}" type="submit">
+                                        <span class="glyphicon glyphicon-remove icon"></span>{{__('Delete')}}
                                         </button> 
                                     </div>
-                                    
-
-
-                                    <!-- 
-                                    <li> {{$user->name}} <span class="btn btn-success pull-right"><a href="/{{$language}}/admin/editcomments">  
-                                    <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span></li> -->
-                                    <!-- <?php ++$i;?>
+                                    <form>
+                                    <?php ++$i;?>
                                 @endif
                             @endforeach 
-                         -->
+
                         </ul>
                     </div>
                 </div>
@@ -152,6 +142,10 @@
     </div>
 </div>
       
-
+<script type="text/javascript">
+    function confirmation() {
+      return confirm('Are you sure you want to do this?');
+    }
+</script>
 
 @endsection

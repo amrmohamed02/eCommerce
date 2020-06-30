@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
+use App\Item;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -136,9 +138,11 @@ class UserController extends Controller
                 return redirect("$language/admin/login");
             }
             else{
+                $comments = Comment::all();
+                $items = Item::all();
                 $users = User::orderBy('id', 'DESC')->get();
                 $pending = User::where("status","pending")->count();
-                return view('admin.Dashboard',["language"=>$language,"users"=>$users,"pending"=>$pending]);
+                return view('admin.Dashboard',["language"=>$language,"users"=>$users,"pending"=>$pending,"items"=>$items,"comments"=>$comments]);
             }
         }
     }

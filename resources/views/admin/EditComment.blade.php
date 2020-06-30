@@ -5,12 +5,12 @@
 
 <div class="container">
 
-    <form class="form-horizontal" >
-         
+    <form class="form-horizontal" method="POST">
+         @csrf
         <div class="form-group  form-group-lg ">
              <label class="col-sm-2 control-label " > {{__('Comment')}} </label>
                 <div class="col-sm-10 col-md-6">
-                <textarea class="form-control" name="comment"></textarea>
+                <textarea class="form-control" name="comment">{{$comment->comment}}</textarea>
             </div>
         </div>
 

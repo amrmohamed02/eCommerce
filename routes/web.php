@@ -28,10 +28,13 @@ Route::group(['prefix' => '{language}'], function () {
     Route::any('/admin/additem',"ProductController@additem");
     Route::any('/admin/edititem/{id}',"ProductController@edititem");
     Route::any('/admin/manageitem/{id?}',"ProductController@manageitem");
-    Route::get('/admin/approveitem/{id}',"ProductController@approveitem");
-
+    Route::any('/admin/comments/{id?}',"CommentController@manage");
+    Route::any('/admin/editcomment/{id}',"CommentController@edit");
     
 });
+Route::get('/admin/approveitem/{id}',"ProductController@approveitem");
+Route::get('/admin/approvecomment/{id}',"CommentController@approve");
+
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
 Route::get('en/admin/editcomments ',function()
