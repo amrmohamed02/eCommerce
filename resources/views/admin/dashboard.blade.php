@@ -52,8 +52,8 @@
 </div>
 
 
-<div class="">
-    <div class="container latest">
+<div class="latest">
+    <div class="container ">
         <div class="row">
             <div class="col-sm-6">
                 <div class="panel panel-default">
@@ -91,14 +91,63 @@
                             <button class="btn btn-info pull-right "  type="submit">
                             <a href="" > <span class="glyphicon glyphicon-ok icon"></span>{{__('Approve')}} </a>
                             </button> 
-                           
                         </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment icon"></span> {{__('Latest')}}  {{__('Comments')}} 
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-unstyled latest-user">
+                             <!-- <?php $i=0;?>
+                            @foreach($users as $user)
+                                @if ($i<5) -->
+                          
+                                    <div class="comment-box"> 
+                                        <span class="member-name"><a href="/{{$language}}/admin/editmember" target="_blank">member name</a></span>
+                                        <p class="member-com">member comment member comment member comment
+                                        member commentmember commentmember commentmembe commentmembercomment</p>     
+                                        
+                                        <button class="btn btn-success pull-right "  type="submit">
+                                            <a href="" > <span class="glyphicon glyphicon-edit icon"></span>{{__('Edit')}} </a>
+                                        </button> 
+
+                                        <button class="btn btn-danger pull-right "  type="submit">
+                                            <a href="" > <span class="glyphicon glyphicon-remove icon"></span>{{__('Delete')}} </a>
+                                        </button> 
+                                    </div>
+
+                                    <div class="comment-box"> 
+                                        <span class="member-name"><a href="/{{$language}}/admin/editmember" target="_blank">member name</a></span>
+                                        <p class="member-com">member comment member comment member comment
+                                        member commentmember commentmember commentmembe commentmembercomment</p>     
+                                        
+                                        <button class="btn btn-success pull-right "  type="submit">
+                                            <a href="" > <span class="glyphicon glyphicon-edit icon"></span>{{__('Edit')}} </a>
+                                        </button> 
+                                        <button class="btn btn-danger pull-right "  type="submit">
+                                            <a href="" > <span class="glyphicon glyphicon-remove icon"></span>{{__('Delete')}} </a>
+                                        </button> 
+                                    </div>
+                                    
 
 
+                                    <!-- 
+                                    <li> {{$user->name}} <span class="btn btn-success pull-right"><a href="/{{$language}}/admin/editcomments">  
+                                    <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span></li> -->
+                                    <!-- <?php ++$i;?>
+                                @endif
+                            @endforeach 
+                         -->
+                        </ul>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

@@ -29,9 +29,9 @@
                   <li ><a href="/{{$language}}/admin/managemember" target="_blank"> {{__('Members')}}</a></li>
                   <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">{{__('Pending')}}{{__('Members')}} </a></li>
                   <li ><a href="/{{$language}}/admin/manageitem" target="_blank">{{__('Items')}}</a></li>
-                  <li ><a href="#" target="_blank"> {{__('Edit')}}Comments</a></li>
-                  <li ><a href="#" target="_blank"> {{__('Edit')}}Comments</a></li>
-                  <li ><a href="#" target="_blank"> {{__('Edit')}} Comments</a></li>
+                  <li ><a href="/{{$language}}/admin/Comments" target="_blank"> {{__('Comments')}}</a></li>
+                  <li ><a href="#" target="_blank"> {{__('Edit')}}test</a></li>
+                  <li ><a href="#" target="_blank"> {{__('Edit')}} test</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">

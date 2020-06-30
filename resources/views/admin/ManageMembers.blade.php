@@ -38,7 +38,8 @@
 
     </div>
 
-<a href="/{{$language}}/admin/addmember" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span> {{__('New')}} {{__('Members')}}  </a>
+<a href="/{{$language}}/admin/addmember" class="btn btn-primary"> 
+<span class="glyphicon glyphicon-plus"></span> {{__('New')}} {{__('Members')}}  </a>
 
 
 </div>

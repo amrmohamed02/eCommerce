@@ -118,6 +118,42 @@
 
     </form>
 
+
+        <!-- start manage comments -->
+    <h2 class="text-center" > {{__('Manage')}} {{__('(Itemname)')}} {{__('Comments')}}</h2>
+
+    <div class="table-responsive">
+        <table class=" main-table text-center table table-bordered">
+
+            <tr>
+                <td>  {{__('Comment')}}</td>
+                <td>  {{__('User Name')}}</td>
+                <td>   {{__('Added')}} {{__('Date')}}</td>
+                <td> {{__('Control')}}</td>
+            </tr>
+
+            <form>
+                  
+                <tr>
+                    <td>this is my comment</td>
+                    <td>mohamed ali</td>
+                    <td>1111</td>
+                    <td>
+                        <a href="/{{$language}}/admin/editcomments" class="btn btn-success">
+                        <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}} </a>
+
+
+                        <button class="btn btn-danger confirm" type="submit" onclick="return confirmation()">
+                        <span class="glyphicon glyphicon-remove"></span> {{__('Delete')}}
+                        </button> 
+
+                    </td>
+                </tr>
+            </form>
+ 
+        </table>
+
+        <!-- end manage comments -->
  </div>
 
 @endsection
