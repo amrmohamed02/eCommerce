@@ -7,10 +7,10 @@
         <meta cherset="UTF-8"/>
         <title> Admin </title>
         <link rel="stylesheet" href="/admin/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="/admin/css/style.css"/>
+        <link rel="stylesheet" href="/admin/css/back.css"/>
     </head>
     <body>
-      {{-- @if(session('userid')) --}}
+        {{-- @if(session('userid')) --}}
         {{-- start navbar --}}
         <nav class="navbar navbar-inverse">
             <div class="container">
@@ -30,13 +30,13 @@
                   <li ><a href="/{{$language}}/admin/pendingmember" target="_blank">{{__('Pending')}}{{__('Members')}} </a></li>
                   <li ><a href="/{{$language}}/admin/manageitem" target="_blank">{{__('Items')}}</a></li>
                   <li ><a href="/{{$language}}/admin/comments" target="_blank"> {{__('Comments')}}</a></li>
-                  <li ><a href="#" target="_blank"> {{__('Edit')}}test</a></li>
-                  <li ><a href="#" target="_blank"> {{__('Edit')}} test</a></li>
+                  
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Username <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                      <li ><a href="index" target="_blank"> {{__('View')}} {{__('Shop')}} </a></li>
                       <li><a href="#"> {{__('Edit')}}{{__('Profail')}}</a></li>
                       <li><a href="#"> {{__('Settings')}}</a></li>
                     <li><a href="/{{$language}}/admin/logout"> {{__('LogOut')}}</a></li>
