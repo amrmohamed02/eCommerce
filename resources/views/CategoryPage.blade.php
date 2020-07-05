@@ -9,13 +9,13 @@
                 <span class="price-box">10$</span>
                 <img class="img-responsive" src="/img2.jpg" alt="item"/>
                 <div class="caption">
-                    <a> <h3>item name</h3> </a>
+                    <a> <h3>{{__(' item Name')}} </h3> </a>
                     <p>description description description description
                     description description description</p>
                 </div>
                 <div class="info">
                     <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
-                    <span class="username pull-right"> <a>mohamed ali</a> </span>
+                    <span class="username pull-right"> <a>{{__(' Category Name')}}</a> </span>
                 </div>
            </div>
         </div>
