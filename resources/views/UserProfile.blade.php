@@ -23,7 +23,10 @@
 <div class="ads block">
     <div class="container">
         <div class="panel panel-primary">
-            <div class="panel-heading"> <span class="glyphicon glyphicon-picture "></span> {{__('Latest Ads')}}</div>
+            <div class="panel-heading"> <span class="glyphicon glyphicon-picture "></span> {{__('Latest Ads')}}
+            <span class="pull-right"> <a href="#">see your ads</a></span>
+            <span class="pull-right"> <a href="#">Creat new ad</a></span>
+            </div>
             <div class="panel-body">
 
                 <div class="row">

@@ -15,6 +15,7 @@
         <span class="pull-left">Welcom <strong>{{__('mohamed')}}</strong> </span>
         <a href="#"> <span class="pull-left">MyProfile</span> </a>
         <a href="#"> <span class="pull-left">Logout</span> </a>
+        <a href="#"> <span class="pull-left">Create new ad</span> </a>
       </div>
       {{-- @if(session('userid')) --}}
         {{-- start navbar --}}
@@ -48,7 +49,7 @@
 {{-- start footer --}}
         <div class="footer"></div>
 
-        <script src="/admin/js/admin.js"></script>
+        <script src="/admin/js/front.js"></script>
         <script src="/admin/js/jquery-3.5.1.min.js"></script>
         <script src="/admin/js/bootstrap.min.js"></script>
     </body>
