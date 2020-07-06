@@ -37,9 +37,9 @@ Route::get('/admin/approvecomment/{id}',"CommentController@approve");
 
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
-Route::get('en/newad',function()
+Route::get('en/showitem',function()
 {   //('/admin/edit') -> is the URL 
-    return view('NewAd');
+    return view('ShowItem');
     // ('admin/members')-> is the page that will open 
 });
 

@@ -17,7 +17,7 @@
                     <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
                     <span class="username pull-right"> <a>{{__(' Category Name')}}</a> </span>
                 </div>
-           </div>
+            </div>
         </div>
 
         <div class=" col-sm-6 col-md-3">
@@ -34,7 +34,7 @@
                     <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
                     <span class="username pull-right"> <a>mohamed ali</a> </span>
                 </div>
-           </div>
+            </div>
         </div>
 
         <div class=" col-sm-6 col-md-3">
@@ -50,7 +50,7 @@
                     <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
                     <span class="username pull-right"> <a>mohamed ali</a> </span>
                 </div>
-           </div>
+            </div>
         </div>
 
         <div class=" col-sm-6 col-md-3">
@@ -66,7 +66,7 @@
                     <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
                     <span class="username pull-right"> <a>mohamed ali</a> </span>
                 </div>
-           </div>
+            </div>
         </div>
     </div>
 </div>

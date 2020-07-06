@@ -15,7 +15,7 @@
         <span class="pull-left">Welcom <strong>{{__('mohamed')}}</strong> </span>
         <a href="#"> <span class="pull-left">MyProfile</span> </a>
         <a href="#"> <span class="pull-left">Logout</span> </a>
-        <a href="#"> <span class="pull-left">Create new ad</span> </a>
+        <a href="#"> <span class="pull-left">CreateNewAd</span> </a>
       </div>
       {{-- @if(session('userid')) --}}
         {{-- start navbar --}}

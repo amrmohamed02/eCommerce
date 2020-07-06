@@ -1,11 +1,16 @@
 /*start main Rolze*/
 body{
-    background-color: #f4f4f4 ;
+    background-color: #fff;
     font-size: 16px;
 }
 h1{
     font-size: 55px;
     margin: 40px 0;
+}
+a{
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;   
 }
 /*end main Rolze */
 
@@ -91,18 +96,9 @@ h1{
 .item-box:hover .price-box{
     left: 4px;
 }
-.item-box .caption a , .info a{
-    text-decoration: none;
-    color: #333333;
-    cursor: pointer;
-}
-.item-box .info{
-
-}
-.item-box .info .views{
-
-}
-.item-box .info a {
+.item-box .add-date{
+    color: #1b89d8;
+    font-weight: bold;
 }
 
 /*end category page */
@@ -132,3 +128,91 @@ h1{
 }
 
 /*end profail page */
+
+/*start show items page */
+.item-info h2{
+    margin-top: 0;
+}
+.item-info .add-date{
+    color: #1b89d8;
+    font-weight: bold;
+}
+.item-info h2 span{
+    font-size: 22px;
+    color: #1b89d8;
+}
+.item-info div{
+    font-size: 18px;
+    margin-top: 10px;
+}
+.item-info div .icon ,.show-com-box .icon{
+    margin-right: 5px;
+}
+.item-info p{
+    font-size: 20px;
+}
+.hr{
+    border-top: 1px solid #b3acac;
+}
+.com-box h3{
+    margin: 0;
+}
+.com-box textarea{
+    height: 100px;
+    width: 600px;
+    margin: 12px 0;
+    display: block;
+}
+.show-com-box .com-user-name , .show-com-box .rate{
+    font-size: 22px;
+    
+}
+.show-com-box .date{
+    color: #1b89d8;
+    font-weight: bold;
+}
+.show-com-box .icon-rate , .rate-box button .icon-rate{
+    font-size: 20px;
+    color:goldenrod ;
+}
+.comment .rate-box button{
+    border: none;
+    background: none;
+}
+.comment .rate-box{
+    margin-top: -15px;
+}
+.comment input{
+    margin-left: 15px;
+}
+.show-com-box .com-user-name img{
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+.comment-box{
+    margin-bottom: 20px;
+}
+.comment-box .lead {
+    background-color: #dcdcdc;
+    position: relative;
+    padding: 10px;
+    margin-left: -25px; 
+    border-radius: 5px;
+}
+.comment-box .lead::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent #dcdcdc transparent transparent;
+    border-width: 15px;
+}
+
+
+
+/*end show items page */

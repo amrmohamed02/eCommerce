@@ -1,6 +1,6 @@
 @extends('layout_front')
 @section('index')
-<h1 class="text-center"> {{__('Create New Ad')}}</h1>
+<h1 class="text-center"> {{__('Create New Item')}}</h1>
 <div class="create-ad block">
     <div class="container">
         <div class="panel panel-primary">
@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-8">
                     <form class="form-horizontal" >
-                         <!---- start category faild ---->
+                        <!---- start category faild ---->
                         <div class="form-group  form-group-lg ">
                             <label class="col-sm-2 control-label " >    {{__('Item')}} {{__('Name')}} </label>
                                 <div class="col-sm-10 col-md-8">
@@ -74,21 +74,17 @@
                                 </div>
                         </div>
                         <!---- end Status faild ---->
-
                         <!---- start category-selct faild ---->
                         <div class="form-group  form-group-lg ">
                             <label class="col-sm-2 control-label " > {{__('Category')}} {{__('Name')}} </label>
                                 <div class="col-sm-10 col-md-8">
                                     <select name="category_id" class="form-control">
                                         <option value=></option>
-                                        
                                         <option value=""></option>
-                                       
                                     </select>
                                 </div>
                         </div>
                         <!---- end category-selct faild ---->
-
                         <div class="form-group form-group-lg ">
                             <div class=" col-sm-offset-2 col-sm-10">
                                 <button class="btn btn-primary btn-lg" type="submit">  

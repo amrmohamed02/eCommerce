@@ -23,7 +23,7 @@
 <div class="ads block">
     <div class="container">
         <div class="panel panel-primary">
-            <div class="panel-heading"> <span class="glyphicon glyphicon-picture "></span> {{__('Latest Ads')}}
+            <div class="panel-heading"> <span class="glyphicon glyphicon-picture"></span> {{__('Latest Ads')}}
             <span class="pull-right"> <a href="#">see your ads</a></span>
             <span class="pull-right"> <a href="#">Creat new ad</a></span>
             </div>
@@ -36,11 +36,13 @@
                             <span class="price-box">10$</span>
                             <img class="img-responsive" src="/img2.jpg" alt="item"/>
                             <div class="caption">
-                                <a> <h3>{{__(' item Name')}} </h3> </a>
+                                <!--- اللينك يودي على show items-->
+                                <a href="#"> <h3>{{__(' item Name')}} </h3> </a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum vitae voluptates 
                                 consequatur explicabo impedit? Exercitationem quibusdam assumenda, pariatur mollitia asperiores
                                 nihil culpa voluptatem, </p>
                             </div>
+                            <div class="add-date">2/2/2020</div>
                             <div class="info">
                                 <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
                                 <span class="btn btn-primary pull-right"><a href="#">  
@@ -56,11 +58,13 @@
                             <span class="price-box">10$</span>
                             <img class="img-responsive" src="/img2.jpg" alt="item"/>
                             <div class="caption">
-                                <a> <h3>{{__(' item Name')}} </h3> </a>
+                                <!--- اللينك يودي على show items-->
+                                <a href="#"> <h3>{{__(' item Name')}} </h3> </a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum vitae voluptates 
                                 consequatur explicabo impedit? Exercitationem quibusdam assumenda, pariatur mollitia asperiores
                                 nihil culpa voluptatem, </p>
                             </div>
+                            <div class="add-date">2/2/2020</div>
                             <div class="info">
                                 <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
                                 <span class="btn btn-primary pull-right"><a href="#">  
@@ -76,11 +80,13 @@
                             <span class="price-box">10$</span>
                             <img class="img-responsive" src="/img2.jpg" alt="item"/>
                             <div class="caption">
-                                <a> <h3>{{__(' item Name')}} </h3> </a>
+                                <!--- اللينك يودي على show items-->
+                                <a href="#"> <h3>{{__(' item Name')}} </h3> </a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum vitae voluptates 
                                 consequatur explicabo impedit? Exercitationem quibusdam assumenda, pariatur mollitia asperiores
                                 nihil culpa voluptatem, </p>
                             </div>
+                            <div class="add-date">2/2/2020</div>
                             <div class="info">
                                 <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>  
                                 <span class="btn btn-primary pull-right"><a href="#">  
@@ -96,11 +102,13 @@
                             <span class="price-box">10$</span>
                             <img class="img-responsive" src="/img2.jpg" alt="item"/>
                             <div class="caption">
-                                <a> <h3>{{__(' item Name')}} </h3> </a>
+                                <!--- اللينك يودي على show items-->
+                                <a href="#"> <h3>{{__(' item Name')}} </h3> </a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum vitae voluptates 
                                 consequatur explicabo impedit? Exercitationem quibusdam assumenda, pariatur mollitia asperiores
                                 nihil culpa voluptatem, </p>
                             </div>
+                            <div class="add-date">2/2/2020</div>
                             <div class="info">
                                 <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
                                 <span class="btn btn-primary pull-right"><a href="#">  
@@ -109,8 +117,6 @@
                         </div>
                     </div>
                     <!---end first ad---->
-
-
                 </div>
             </div>
         </div>
