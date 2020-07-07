@@ -101,7 +101,7 @@
                             <span class="price-box">0<span>$</span> </span>
                             <img class="img-responsive" src="/img2.jpg" alt="item"/>
                             <div class="caption">
-                                <a> <h3>{{__(' item Name' )}} </h3> </a>
+                                <a> <h3 id="item-name">{{__(' item Name' )}} </h3> </a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum vitae voluptates 
                                 consequatur explicabo impedit? Exercitationem quibusdam assumenda, pariatur mollitia asperiores
                                 nihil culpa voluptatem, </p>
@@ -113,6 +113,19 @@
         </div>
     </div>
 </div>
+<script>
+ //alert('hello');
+ $('.live-name').keyup(function(){
+        $('#item-name').text($(this).val());
+    });
 
+    $('.live-desc').keyup(function(){
+        $('.live-preview .caption p ').text($(this).val());
+    });
+
+    $('.live-price').keyup(function(){
+        $('.live-preview .price-box ').text($(this).val());
+    });
+</script>
 
 @endsection

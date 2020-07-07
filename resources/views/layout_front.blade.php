@@ -9,13 +9,23 @@
         <link rel="stylesheet" href="/admin/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/admin/css/front.css"/>
     </head>
-    <body>
+    <body> 
       <div class="upper-bar container">
+      <img class="img-circle" src="/img.jpg" alt="user img"/>
+        <div class="btn-group user-info">
+          <span class=" btn dropdowm-toggle" data-toggle="dropdown">
+          ali ahmed<span class="caret"></span>
+          </span>
+            <ul class="dropdown-menu">
+              <li> <a href="#"> MyProfile </a> </li>
+              <li> <a href="#"> CreateNewAd </a> </li>
+              <li> <a href="#"> Logout </a> </li>
+              <li> <a href="#"> MyProfile </a> </li>
+              <li> <a href="#"> MyProfile </a> </li>
+            </ul>
+
+        </div>
         <a> <span class="pull-right">Login||Signup</span> </a>
-        <span class="pull-left">Welcom <strong>{{__('mohamed')}}</strong> </span>
-        <a href="#"> <span class="pull-left">MyProfile</span> </a>
-        <a href="#"> <span class="pull-left">Logout</span> </a>
-        <a href="#"> <span class="pull-left">CreateNewAd</span> </a>
       </div>
       {{-- @if(session('userid')) --}}
         {{-- start navbar --}}
@@ -49,9 +59,9 @@
 {{-- start footer --}}
         <div class="footer"></div>
 
-        <script src="/admin/js/front.js"></script>
-        <script src="/admin/js/jquery-3.5.1.min.js"></script>
-        <script src="/admin/js/bootstrap.min.js"></script>
+        <script src="../admin/js/front.js"></script>
+        <script src="../admin/js/jquery-3.5.1.min.js"></script>
+        <script src="../admin/js/bootstrap.min.js"></script>
     </body>
 </html>
 {{-- end footer --}}

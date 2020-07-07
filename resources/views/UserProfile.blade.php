@@ -44,7 +44,8 @@
                             </div>
                             <div class="add-date">2/2/2020</div>
                             <div class="info">
-                                <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
+                                <span class="wait-aprove">  wait-aprove </span> <br>
+                                <span class="accepte">  accepte </span>
                                 <span class="btn btn-primary pull-right"><a href="#">  
                                 <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span>
                             </div>
@@ -66,7 +67,8 @@
                             </div>
                             <div class="add-date">2/2/2020</div>
                             <div class="info">
-                                <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
+                                <span class="wait-aprove">  wait-aprove </span> <br>
+                                <span class="accepte">  accepte </span>
                                 <span class="btn btn-primary pull-right"><a href="#">  
                                 <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span>
                             </div>
@@ -88,7 +90,8 @@
                             </div>
                             <div class="add-date">2/2/2020</div>
                             <div class="info">
-                                <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>  
+                                <span class="wait-aprove">  wait-aprove </span> <br>
+                                <span class="accepte">  accepte </span> 
                                 <span class="btn btn-primary pull-right"><a href="#">  
                                 <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span>                 
                             </div>
@@ -110,7 +113,8 @@
                             </div>
                             <div class="add-date">2/2/2020</div>
                             <div class="info">
-                                <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
+                                <span class="wait-aprove">  wait-aprove </span> <br>
+                                <span class="accepte">  accepte </span>
                                 <span class="btn btn-primary pull-right"><a href="#">  
                                 <span class="glyphicon glyphicon-edit icon"></span> {{__('Edit')}}</a></span>
                             </div>

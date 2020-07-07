@@ -43,7 +43,9 @@
     // $('.live-name').keyup (function(){
     //     console.log($(this).val());
     // });
-
+    $().ready(function(){
+        alert('hello');
+    });
     $('.live-name').keyup(function(){
         $('.live-preview .caption h3 ').text($(this).val());
     });

@@ -18,7 +18,7 @@
                     <span class="username pull-right"> <a>{{__(' Category Name')}}</a> </span>
                 </div>
             </div>
-        </div>
+        </div> 
 
         <div class=" col-sm-6 col-md-3">
                 <div class="thumbnail  item-box">
