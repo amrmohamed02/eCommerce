@@ -21,7 +21,7 @@ class CreateItem extends Migration
             $table->string('country');
             $table->string('image')->nullable();
             $table->string('status');
-            $table->smallInteger('rating')->nullable();
+            $table->tinyInteger('rating')->nullable();
             $table->integer('approve')->default(0);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('category');

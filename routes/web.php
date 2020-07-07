@@ -13,36 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', 'en/admin/login');
-Route::group(['prefix' => '{language}'], function () {
-    Route::any('/admin/login', "UserController@login");
-    Route::get('/admin/dashboard', "UserController@welcome");
-    Route::get('/admin/logout',"UserController@logout");
-    Route::any('/admin/editmember/{id}',"UserController@edit");
-    Route::any('/admin/addmember',"UserController@register");
-    Route::any('/admin/managemember/{id?}',"UserController@manage");
-    Route::any('/admin/pendingmember/{id?}',"UserController@pending");
-    Route::any('/admin/addcategory',"ProductController@addcat");
-    Route::any('/admin/managecategory/{id?}',"ProductController@managecat");
-    Route::any('/admin/editcategory/{id}',"ProductController@editcat");
-    Route::any('/admin/additem',"ProductController@additem");
-    Route::any('/admin/edititem/{id}',"ProductController@edititem");
-    Route::any('/admin/manageitem/{id?}',"ProductController@manageitem");
-    Route::any('/admin/comments/{id?}',"CommentController@manage");
-    Route::any('/admin/editcomment/{id}',"CommentController@edit");
-    
+
+Route::redirect('/', 'en/login');
+Route::group(['prefix' => '{language}/'], function () {
+    Route::group(['prefix' => 'admin/'], function () {
+        Route::any('login', "AdminController@login");
+        Route::get('dashboard', "AdminController@welcome");
+        Route::get('logout',"AdminController@logout");
+        Route::any('editmember/{id}',"AdminController@edit");
+        Route::any('addmember',"AdminController@register");
+        Route::any('managemember/{id?}',"AdminController@manage");
+        Route::any('pendingmember/{id?}',"AdminController@pending");
+        Route::any('addcategory',"ProductController@addcat");
+        Route::any('managecategory/{id?}',"ProductController@managecat");
+        Route::any('editcategory/{id}',"ProductController@editcat");
+        Route::any('additem',"ProductController@additem");
+        Route::any('edititem/{id}',"ProductController@edititem");
+        Route::any('manageitem/{id?}',"ProductController@manageitem");
+        Route::any('comments/{id?}',"CommentController@manage");
+        Route::any('editcomment/{id}',"CommentController@edit");
+    });
+    Route::any('login', "UserController@login");
+    Route::any('register', "UserController@register");
+    Route::get('logout',"AdminController@logout");
+    Route::get('profile', "UserController@welcome");
+    Route::get('showitem/{id}', "UserController@showitem");
+    Route::post('addcomment/{id}', "CommentController@add");
+    Route::post('addrate/{id}', "CommentController@addrate");
+    Route::any('add', "UserController@add");
+    Route::get('category/{id}',"UserController@category");
+
+
 });
 Route::get('/admin/approveitem/{id}',"ProductController@approveitem");
 Route::get('/admin/approvecomment/{id}',"CommentController@approve");
 
 
 // انسخ دا وعدل فيه هيكون سهل ان شاء الله 
-Route::get('en/profile',function()
+Route::get('en/showiteasdm',function()
 {   //('/admin/edit') -> is the URL 
-    return view('UserProfile');
+    return view('ShowItem');
     // ('admin/members')-> is the page that will open 
 });
 
-
-// category 
-// CategoryPage

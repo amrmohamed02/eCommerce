@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Comment;
 use App\Item;
 use App\User;
@@ -9,34 +10,44 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\URL;
-
 
 class UserController extends Controller
 {
+    public function login(Request $request,$language)
+    {
+        App::setLocale($language);
+        if($request->isMethod('get')){
+            if(!session('userid')){
+                return view('Login',["language"=>$language]);
+            }
+            else{
+                return redirect("$language/profile");
+            }
+        }
+        if($request->isMethod('post')){
+            $email = $request->input('email');
+                $user=DB::table("user")->where('email',$email)->first();
+                if($user){  
+                    $password=Hash::check($request->input('password'), $user->password);
+                    if($password){
+                        session(['userid' => $user->id]);  
+                        session(['username' => $user->name]);  
+                        return redirect("$language/profile");
+                    }
+                    else{
+                        return "wrong password";
+                    }       
+                }
+                else{
+                    return "wrong email or pass";
+                }
+        }
+    }
+
     public function register(Request $request,$language)
     {
 
         App::setLocale($language);
-        //register as admin   COMMENTED FOR TESTING
-        // if($request->isMethod('post')){
-        //     $this->validate($request,[
-        //         'name'=>'required|max:60',
-        //         'email'=>'required|unique:user',
-        //         'password'=>'required|max:30|min:4|confirmed',
-        //         'terms'=>'required',
-        //     ]);
-        //     $user = new User();
-        //     $user->name=$request->input('name');
-        //     $user->email=$request->input('email');
-        //     $user->password=Hash::make($request->input('password'));
-        //     $user->terms=$request->input('terms');
-        //     $user->save();
-        //     session(['userid' => $user->id]);
-        //     session(['username' => $user->name]);
-        //     return redirect("$language/admin/dashboard");
-        // }
-
         //registering a member
             if($request->isMethod('post')){
                 //commented for testing
@@ -53,81 +64,13 @@ class UserController extends Controller
                 $user->username=$request->input('username');
                 $user->groupid=1;//seller
                 $user->save();
-                return view('admin.AddMember',["language"=>$language]);
+                session(['userid' => $user->id]);  
+                session(['username' => $user->name]);
+                return redirect("$language/profile");
             }
             else{
-                return view('admin.AddMember',["language"=>$language]);
+                return view('Login',["language"=>$language]);
             }
-    }
-    public function login(Request $request,$language)
-    {
-        App::setLocale($language);
-        if($request->isMethod('get')){
-            if(!session('userid')){
-                return view('admin.Login');
-            }
-            else{
-                return redirect("$language/admin/dashboard");
-            }
-        }
-        if($request->isMethod('post')){
-            $email = $request->input('email');
-                $user=DB::table("user")->where('email',$email)->first();
-                if($user){  
-                    $password=Hash::check($request->input('password'), $user->password);
-                    if($password){
-                        session(['userid' => $user->id]);  
-                        session(['username' => $user->name]);  
-                        return redirect("$language/admin/dashboard");
-                    }
-                    else{
-                        return "wrong password";
-                    }       
-                }
-                else{
-                    return "wrong email or pass";
-                }
-        }
-    }
-
-    public function logout($language)
-    {
-        App::setLocale($language);
-        session()->forget('userid');
-        return redirect("$language/admin/login");
-    }
-
-    public function edit(Request $request,$language,$id)
-    {
-        App::setLocale($language);
-        $user =User::find($id);
-        if($request->isMethod('post')){
-            $user->name=$request->input('fullname');
-            $user->email=$request->input('email');
-            if($request->input('password'))
-                $user->password=Hash::make($request->input('password'));
-            $user->username=$request->input('username');
-            $user->groupid=1;
-            $user->save();
-            return redirect("$language/admin/managemember");
-        }
-        else{
-            return view('admin.EditMembers',['user'=>$user]);
-        } 
-    }
-
-    public function manage(Request $request,$language,$id=null)
-    {
-        App::setLocale($language);         
-        if($request->isMethod('post')){ 
-            $user =User::find($id);
-            $user->forcedelete();
-            return redirect()->back();
-        }
-        else{
-            $users=User::where("status","accepted")->get();
-            return view('admin.ManageMembers',["language"=>$language],["users"=>$users]);
-        } 
     }
 
     public function welcome(Request $request,$language)
@@ -135,30 +78,47 @@ class UserController extends Controller
         App::setLocale($language);
         if($request->isMethod('get')){
             if(!session('userid')){
-                return redirect("$language/admin/login");
+                return redirect("$language/login");
             }
             else{
-                $comments = Comment::all();
-                $items = Item::all();
-                $users = User::orderBy('id', 'DESC')->get();
-                $pending = User::where("status","pending")->count();
-                return view('admin.Dashboard',["language"=>$language,"users"=>$users,"pending"=>$pending,"items"=>$items,"comments"=>$comments]);
+                $user = User::where('id',session('userid'))->first();
+                $items = Item::where('user_id',session('userid'))->get();
+                $comments = Comment::all();// just for testing
+                return view('Userprofile',['language'=>$language,'user'=>$user,'items'=>$items,'comments'=>$comments]);
             }
         }
     }
 
-    public function pending(Request $request,$language,$id=null)
+    public function showitem($language,$id)
     {
         App::setLocale($language);
-        if($request->isMethod('post')){ 
-            $user =User::find($id);
-            $user->status = "accepted";
-            $user->save();
-            return redirect("$language/admin/pendingmember");
+        $item = Item::find($id);
+        return view('ShowItem',['language'=>$language,'item'=>$item]);
+    }
+
+    public function add(Request $request,$language)
+    {
+        if($request->isMethod('get')){
+            $cats = Category::all();
+            return view('NewAd',['cats'=>$cats,'language'=>$language]);
         }
         else{
-            $users=User::where("status","pending")->get();
-            return view('admin.PendingMembers',["language"=>$language],["users"=>$users]);
+            $item = new Item();
+            $item->name=$request->input('name');
+            $item->description=$request->input('description');
+            $item->price=$request->input('price');
+            $item->country=$request->input('country');
+            $item->status=$request->input('status');
+            $item->user_id=session('userid');
+            $item->category_id=$request->input('category_id');
+            $item->save();
+            return redirect()->back();
         }
+    }
+
+    public function category($language,$id)
+    {
+        $items = Item::where('category_id',$id)->where('approve',1)->get();
+        return view('Category',['items'=>$items,'language'=>$language]);
     }
 }

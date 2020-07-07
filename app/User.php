@@ -18,4 +18,9 @@ class User extends Model
         return $this->hasMany('App\Comment');
     }
 
+    public function rate()
+    {
+        return $this->hasOne('App\Rate');
+    }
+
 }
