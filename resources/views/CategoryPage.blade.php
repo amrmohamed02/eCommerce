@@ -14,12 +14,12 @@
                     description description description</p>
                 </div>
                 <div class="info">
-                    <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
-                    <span class="username pull-right"> <a>{{__(' Category Name')}}</a> </span>
+                    <span class="date"> <span class="glyphicon glyphicon-calendar icon"></span>2/3/10001</span> <br>
+                    <span class="username pull-right"> <a>{{__(' Category Name ')}}</a> </span>
                 </div>
             </div>
-        </div> 
-
+        </div>   
+ 
         <div class=" col-sm-6 col-md-3">
                 <div class="thumbnail  item-box">
                 <span class="price-box">10$</span>
@@ -31,7 +31,7 @@
                     description description description</p>
                 </div>
                 <div class="info">
-                    <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
+                    <span class="date"> <span class="glyphicon glyphicon-calendar icon"></span>2/3/10001</span> <br>
                     <span class="username pull-right"> <a>mohamed ali</a> </span>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     description description description</p>
                 </div>
                 <div class="info">
-                    <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
+                    <span class="date"> <span class="glyphicon glyphicon-calendar icon"></span>2/3/10001</span> <br>
                     <span class="username pull-right"> <a>mohamed ali</a> </span>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     description description description</p>
                 </div>
                 <div class="info">
-                    <span class="views"> <span class="glyphicon glyphicon-eye-open"></span> 10  </span>
+                    <span class="date"> <span class="glyphicon glyphicon-calendar icon"></span>2/3/10001</span> <br>
                     <span class="username pull-right"> <a>mohamed ali</a> </span>
                 </div>
             </div>

@@ -39,11 +39,13 @@
 
     </div>
 
+    <a href="/{{$language}}/admin/addmember" class="btn btn-primary"> 
+<span class="glyphicon glyphicon-plus"></span> {{__('New')}} {{__('Members')}}  </a>
 
 </div>
 <script type="text/javascript">
     function confirmation() {
-      return confirm('Are you sure you want to do this?');
+    return confirm('Are you sure you want to do this?');
     }
 </script>
 

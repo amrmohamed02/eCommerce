@@ -74,9 +74,24 @@ a{
 .login-page form input{
     margin-bottom: 5px;
 }
-
-
 /*end login page */
+
+/*start signup page */
+.signup-page form{
+    max-width: 500px;
+    margin: auto;
+}
+.signup-page form input{
+    margin-bottom: 5px;
+}
+.signup-page form label{
+    width: 130px;
+}
+.signup-page form .avatar{
+    width: 355px;
+}
+
+/*end signup page */
 
 /*start category page */
 .item-box{
@@ -229,6 +244,17 @@ a{
     border-style: solid;
     border-color: transparent #dcdcdc transparent transparent;
     border-width: 15px;
+}
+.item-info .span-tag{
+    padding: 2px 4px;
+    background-color: #0bca30;
+    border-radius: 7px;
+    margin-right: 7px;
+
+
+}
+.item-info .span-tag a{
+    color: #fff;
 }
 
 

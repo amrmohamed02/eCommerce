@@ -74,6 +74,7 @@
                                 </div>
                         </div>
                         <!---- end Status faild ---->
+
                         <!---- start category-selct faild ---->
                         <div class="form-group  form-group-lg ">
                             <label class="col-sm-2 control-label " > {{__('Category')}} {{__('Name')}} </label>
@@ -85,14 +86,35 @@
                                 </div>
                         </div>
                         <!---- end category-selct faild ---->
+
+                        <!---- start Photo faild ---->
+                        <div class="form-group form-group-lg ">
+                            <label class="col-sm-2 control-label " >  {{__('Add Photo')}}</label>
+                                <div class="col-sm-10 col-md-8">
+                                <input type="file" name="avatar" class="form-control" />
+                            </div>
+                        </div>
+                        <!---- end Photo faild ---->
+
+                        <!---- start Tags faild ---->
+                        <div class="form-group  form-group-lg ">
+                            <label class="col-sm-2 control-label " >  {{__('Tags')}} </label>
+                            <div class="col-sm-10 col-md-8">
+                                <input type="text" 
+                                    name="Tags" 
+                                    placeholder="Add your producte tags" 
+                                    class="form-control" 
+                                    value="{{Request::Old('country')}}" />
+                            </div>
+                        </div>
+                        <!---- end Tags faild ---->
+
                         <div class="form-group form-group-lg ">
                             <div class=" col-sm-offset-2 col-sm-10">
                                 <button class="btn btn-primary btn-lg" type="submit">  
                                 <span class="glyphicon glyphicon-plus-sign"></span> {{__('Add')}} {{__('New')}} {{__('Item')}}</button> 
                             </div>
                         </div> 
-
-
                     </form>
 
                     </div>
@@ -101,7 +123,7 @@
                             <span class="price-box">0<span>$</span> </span>
                             <img class="img-responsive" src="/img2.jpg" alt="item"/>
                             <div class="caption">
-                                <a> <h3 id="item-name">{{__(' item Name' )}} </h3> </a>
+                                <a> <h3 id="item-name"> {{__(' item Name' )}} </h3> </a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum vitae voluptates 
                                 consequatur explicabo impedit? Exercitationem quibusdam assumenda, pariatur mollitia asperiores
                                 nihil culpa voluptatem, </p>
@@ -113,6 +135,7 @@
         </div>
     </div>
 </div>
+
 <script>
  //alert('hello');
  $('.live-name').keyup(function(){

@@ -84,7 +84,7 @@
             <label class="col-sm-2 control-label " >{{__('Member')}}{{__('Name')}}   </label>
                 <div class="col-sm-10 col-md-6">
                     <select name="user_id" class="form-control">
-                  
+                
                         <option value="{{$item->user->id}}">{{$item->user->name}}</option>
                         @foreach ($users as $user)
                         <option value="{{$user->id}}">{{$user->name}}</option>
@@ -133,7 +133,6 @@
             </tr>
 
             <form>
-                  
                 <tr>
                     <td>this is my comment</td>
                     <td>mohamed ali</td>

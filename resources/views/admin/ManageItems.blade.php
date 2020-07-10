@@ -4,9 +4,10 @@
 <h1 class="text-center"> {{__('Manage')}} {{__('Item')}} </h1>
 <div class="container">
     <div class="table-responsive">
-        <table class=" main-table text-center table table-bordered">
+        <table class=" main-table text-center manage-items table table-bordered">
             <tr>
                 <td>#{{__('ID')}} </td>
+                <td> {{__('Photo')}} </td>
                 <td> {{__('Name')}} </td>
                 <td> {{__('Description')}} </td>
                 <td> {{__('Price')}} </td>
@@ -18,6 +19,8 @@
                     @csrf
                     <tr>
                     <td>{{$item->id}}</td>
+                    <!--المكان الى هتظهر فيه الصورة--->
+                    <td class="img-row"><img class="img-circle" src="/img.jpg" alt="user img"/></td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->description}}</td>
                     <td>{{$item->price}}</td>

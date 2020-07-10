@@ -21,7 +21,7 @@
         @csrf
         <!---- start category faild ---->
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " >    {{__('Item')}} {{__('Name')}} </label>
+            <label class="col-sm-2 control-label " >    {{__('Item')}} {{__('Name')}} </label>
                 <div class="col-sm-10 col-md-6">
                     <input type="text"
                             name="name" 
@@ -34,13 +34,13 @@
 
         <!---- start Description faild ---->
         <div class="form-group  form-group-lg ">
-             <label class="col-sm-2 control-label " >   {{__('Description')}}</label>
+            <label class="col-sm-2 control-label " >   {{__('Description')}}</label>
                 <div class="col-sm-10 col-md-6">
-                    <input type="text" 
+                    <textarea type="text" 
                             name="description" 
                             placeholder="Item Description" 
                             class="form-control" 
-                            value="{{Request::Old('description')}}" />
+                            value="{{Request::Old('description')}}" ></textarea>
                 </div>
         </div>
         <!---- end Description faild ---->
@@ -113,6 +113,28 @@
         </div>
         <!---- end category-selct faild ---->
 
+        <!---- start Tags faild ---->
+        <div class="form-group  form-group-lg ">
+            <label class="col-sm-2 control-label " >  {{__('Tags')}} </label>
+            <div class="col-sm-10 col-md-6">
+                <input type="text" 
+                    name="Tags" 
+                    placeholder="Add your producte tags" 
+                    class="form-control" 
+                    value="{{Request::Old('country')}}" />
+            </div>
+        </div>
+        <!---- end Tags faild ---->
+
+        <!---- start Photo faild ---->
+        <div class="form-group form-group-lg ">
+            <label class="col-sm-2 control-label " >  {{__('Add Photo')}}</label>
+                <div class="col-sm-10 col-md-6">
+                <input type="file" name="avatar" class="form-control" />
+            </div>
+        </div>
+        <!---- end Photo faild ---->
+
         <div class="form-group form-group-lg ">
             <div class=" col-sm-offset-2 col-sm-10">
                 <button class="btn btn-primary btn-lg" type="submit">  
@@ -123,6 +145,6 @@
 
     </form>
 
- </div>
+</div>
 
 @endsection

@@ -6,14 +6,14 @@
     <div class="panel panel-default">
         <div class="panel-heading">  <h2> <span class="glyphicon glyphicon-edit icon"></span> {{__('Manage')}}{{__('Categories')}} </h2>
             <div class="option pull-right">
-            <span class="glyphicon glyphicon-sort"></span>{{__('Ordering')}}  : [
-            <a href="#" class="active"> {{__('Asc')}}</a> | <a href="#"> {{__('Desc')}}</a> ]
-            <span class="glyphicon glyphicon-eye-open"></span> {{__('View')}} : [
-            <span> {{__('Classic')}}</span> | <span class="active"> {{__('Full')}}</span> ]
+                <span class="glyphicon glyphicon-sort"></span>{{__('Ordering')}}  : [
+                <a href="#" class="active"> {{__('Asc')}}</a> | <a href="#"> {{__('Desc')}}</a> ]
+                <span class="glyphicon glyphicon-eye-open"></span> {{__('View')}} : [
+                <span> {{__('Classic')}}</span> | <span class="active"> {{__('Full')}}</span> ]
             </div>
-        
         </div>
-            <div class="panel-body categories">
+
+        <div class="panel-body categories">
                 @foreach ($category as $cat)
                 <form method="POST" action="/{{$language}}/admin/managecategory/{{$cat->id}}">
                     @csrf
@@ -35,7 +35,6 @@
                             @else
                                 <p>{{$cat->description}}</p> 
                             @endif
-                            
                             @if ($cat->visibilty=='1')
                                 <span class="visibility"> <span class="glyphicon glyphicon-eye-close"></span> {{__('Hidden')}}  </span>
                             @else
@@ -54,19 +53,30 @@
                                 <span class="ads"> <span class="glyphicon glyphicon-facetime-video"></span> {{__('Ads')}}{{__('Enabled')}}   </span>
                             @endif
                         </div>
-                    </div>
-                    <hr/>
-                </form>
-                @endforeach
-                
-            </div>
+                        <h4 class="sub-title">Your Sub-Categories</h4>
+                            <div class="sub-cates">
+                                <span><a href="/{{$language}}/admin/editcategory/{{$cat->id}}> "> sub category</a> 
+                                    <a onclick="return confirmation()" class="show-delete">Delete</a> 
+                                </span> <br>
+                                <span><a href="#">sub category</a></span> <br>
+                                <span><a href="#">sub category</a></span> <br>
+                                <span><a href="#">sub category</a></span><br>
+                            </div>
+                        <hr/>
+                </form>       
+        </div>
+
+        @endforeach
+        
     </div>
-    <a href="/{{$language}}/admin/addcategory" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span>{{__('New')}}{{__('Category')}}   </a>
+</div>
+
+<a href="/{{$language}}/admin/addcategory" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span>{{__('New')}}{{__('Category')}}   </a>
 
 </div>
 <script type="text/javascript">
     function confirmation() {
-      return confirm('Are you sure you want to do this?');
+    return confirm('Are you sure you want to do this?');
     }
 </script>
 

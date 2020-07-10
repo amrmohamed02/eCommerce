@@ -7,6 +7,11 @@ h1{
     font-size: 55px;
     margin: 40px 0;
 }
+a{
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;   
+}
 /*end main Rolze */
 
 /* start login form */
@@ -194,6 +199,14 @@ margin-bottom: 10px;
     text-decoration: none;
     color: #fff;
 }
+.manage-members img{
+    width: 50px;
+    height: 50px;
+}
+.manage-members .img-row{
+    width: 93px;
+    padding: 5px;
+}
 
 /* end members */
 
@@ -223,11 +236,32 @@ margin-bottom: 10px;
     margin: 0 0 5px ;
     cursor: pointer;
     font-weight: bold;
-    color: #6a6a6a;
+    color: #5482ea;
 }
 .categories .full-view p{
     margin: 10px 3px;
     color: #707070;
+}
+.categories  h4{
+    font-weight: bold;
+    color: #0cbdbd;
+    margin-top: 20px;
+}
+.categories  .sub-cates{
+    margin-left: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+.categories  .sub-cates .show-delete{
+    color: red;
+    margin-left: 5px;
+}
+.categories  .sub-cates span::before{
+    content: "-";
+}
+.categories .full-view .sub-cates span a{
+    color: #6a6a6a;
 }
 .categories .full-view .glyphicon{
     margin-right: 5px;
@@ -237,6 +271,10 @@ margin-bottom: 10px;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
+    border-radius:10px ;
+}
+.categories .cat:hover{
+    background-color:#eee;
 }
 .categories .cat:hover .hidden-buttens{
     right: 10px;
@@ -276,7 +314,7 @@ margin-bottom: 10px;
     margin-right: 15px;
     color: #EEE;
 }
-.categories hr{
+.categories form hr{
     border-top: 2px solid #18dcff;
 }
 .categories .cat:last-of-type ~ hr{
@@ -284,3 +322,15 @@ margin-bottom: 10px;
 }
 
 /* end category page */
+
+/* staet manage-items page */
+.manage-items img{
+    width: 50px;
+    height: 50px;
+}
+.manage-items .img-row{
+    width: 93px;
+    padding: 5px;
+}
+
+/* end manage-items page */

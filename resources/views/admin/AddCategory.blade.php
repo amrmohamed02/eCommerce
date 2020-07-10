@@ -29,7 +29,8 @@
         <div class="form-group form-group-lg ">
             <label class="col-sm-2 control-label " >{{__('Description')}}</label>
                 <div class="col-sm-10 col-md-6">
-                <input type="text" name="description" placeholder="Your Description" class="form-control" value="{{Request::Old('description')}}"/>
+                <textarea type="text" name="description" placeholder="Your Description" class="form-control" 
+                value="{{Request::Old('description')}}"></textarea>
             </div>
         </div> 
         <!---- end category faild ---->  
@@ -37,16 +38,29 @@
         
         <!---- start Ordering faild ---->
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " >{{__('Ordering')}}</label>
+            <label class="col-sm-2 control-label " >{{__('Ordering')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <input type="number" name="ordering" class="form-control" placeholder="Your Order" value="{{Request::Old('ordering')}}"/>
             </div>
         </div> 
-        <!---- end Ordering faild ---->       
+        <!---- end Ordering faild ---->    
+
+        <!---- start parent faild ---->
+        <div class="form-group form-group-lg ">
+            <label class="col-sm-2 control-label " >{{__('Parent?')}}</label>
+                <div class="col-sm-10 col-md-6">
+                <select name="parent" class="form-control">
+                        <option value="0">a</option>
+                        <option value="0">a</option>
+                        <option value="0">a</option>
+                    </select>
+            </div>
+        </div> 
+        <!---- end parent faild ---->   
 
         <!---- start visibilty faild ---->
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " >{{__('visibilty')}}</label>
+            <label class="col-sm-2 control-label " >{{__('visibilty')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <div>
                     <input id="vis-yes" type="radio" name="visibilty" value="0" checked />
@@ -62,7 +76,7 @@
 
         <!---- start commenting faild ---->
         <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " >{{__('Allow')}} {{__('commenting')}} </label>
+            <label class="col-sm-2 control-label " >{{__('Allow')}} {{__('commenting')}} </label>
                 <div class="col-sm-10 col-md-6">
                 <div>
                     <input id="com-yes" type="radio" name="commenting" value="0" checked />
@@ -78,7 +92,7 @@
 
         <!---- start Ads faild ---->
             <div class="form-group form-group-lg ">
-             <label class="col-sm-2 control-label " > {{__('Allow')}}{{__('Ads')}}</label>
+            <label class="col-sm-2 control-label " > {{__('Allow')}}{{__('Ads')}}</label>
                 <div class="col-sm-10 col-md-6">
                 <div>
                     <input id="Ads-yes" type="radio" name="Ads" value="0" checked />
@@ -102,5 +116,5 @@
 
     </form>
 
- </div>
+</div>
 @endsection

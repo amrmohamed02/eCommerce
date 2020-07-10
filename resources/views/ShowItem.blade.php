@@ -19,9 +19,14 @@
             <div class="add-date"> <span class="glyphicon glyphicon-calendar icon"></span> 2/2/2020</div>
             <div class="price"> <span class="glyphicon glyphicon-usd icon"></span> Price : 20$</div>
             <div class="con-made"> <span class="glyphicon glyphicon-cog icon"></span> Made in : USA</div>
-            <div class="cat-name"> <span class="glyphicon glyphicon-tags icon"></span> Category : <a href="#"> Category name </a> </div>
+            <div class="cat-name"> <span class="glyphicon glyphicon-link icon"></span> Category : <a href="#"> Category name </a> </div>
             <!-- a===>public user profile  --->
             <div class="seller-name"> <span class="glyphicon glyphicon-user icon"></span> Add By : <a href="#"> Ali Ahmed </a> </div>
+            <div class="tags"> <span class="glyphicon glyphicon-tags icon"></span> Tags : 
+                <sapn class="span-tag"> <a>tag1</a> </sapn>
+                <sapn class="span-tag"> <a>tag1</a> </sapn>
+                <sapn class="span-tag"> <a>tag1</a> </sapn>
+            </div>
         </div>
     </div>
     <hr class="hr"/>

@@ -5,10 +5,11 @@
 
 <div class="container">
     <div class="table-responsive">
-        <table class=" main-table text-center table table-bordered">
+        <table class=" main-table manage-members text-center table table-bordered">
 
             <tr>
                 <td> {{__('#ID')}}</td>
+                <td> {{__('user photo')}}</td>
                 <td>  {{__('Username')}}</td>
                 <td>  {{__('Email')}}</td>
                 <td>  {{__('Fullname')}}</td>
@@ -20,6 +21,8 @@
                     @csrf
                     <tr>
                         <td>{{$user->id}}</td>
+                        <!--المكان الى هتظهر فيه الصورة--->
+                        <td class="img-row"><img class="img-circle" src="/img.jpg" alt="user img"/></td>
                         <td>{{$user->username}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->name}}</td>
@@ -45,7 +48,7 @@
 </div>
 <script type="text/javascript">
     function confirmation() {
-      return confirm('Are you sure you want to do this?');
+    return confirm('Are you sure you want to do this?');
     }
 </script>
 
