@@ -1,6 +1,9 @@
 @extends('layout_front')
 @section('index')
 <h1 class="text-center"> {{__('Create New Item')}}</h1>
+<?php 
+    use App\Category;
+?>
 <div class="create-ad block">
     <div class="container">
         <div class="panel panel-primary">
@@ -8,16 +11,17 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-8">
-                    <form class="form-horizontal" >
+                    <form class="form-horizontal" method="POST">
+                        @csrf
                         <!---- start category faild ---->
                         <div class="form-group  form-group-lg ">
                             <label class="col-sm-2 control-label " >    {{__('Item')}} {{__('Name')}} </label>
                                 <div class="col-sm-10 col-md-8">
                                     <input type="text"
-                                            name="name " 
+                                            name="name" 
                                             placeholder="Your Item Name"
                                             class="form-control live-name" 
-                                            value="" />
+                                            value="{{Request::Old('name')}}" />
                                 </div>
                         </div>
                         <!---- end category faild ---->
@@ -30,7 +34,7 @@
                                             name="description" 
                                             placeholder="Item Description" 
                                             class="form-control live-desc" 
-                                            value="" ></textarea>
+                                            value="{{Request::Old('description')}}" ></textarea>
                                 </div>
                         </div>
                         <!---- end Description faild ---->
@@ -78,10 +82,12 @@
                         <!---- start category-selct faild ---->
                         <div class="form-group  form-group-lg ">
                             <label class="col-sm-2 control-label " > {{__('Category')}} {{__('Name')}} </label>
-                                <div class="col-sm-10 col-md-8">
+                                <div class="col-sm-10 col-md-6">
                                     <select name="category_id" class="form-control">
-                                        <option value=></option>
-                                        <option value=""></option>
+                                        <option value="{{Category::where('name','Request::Old("category_id")')->get('id')}}">{{Request::Old('category_id')}}</option>
+                                        @foreach ($cats as $cat)
+                                        <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                         </div>

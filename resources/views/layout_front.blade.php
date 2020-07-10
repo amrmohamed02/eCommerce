@@ -19,7 +19,7 @@
             <ul class="dropdown-menu">
               <li> <a href="#"> MyProfile </a> </li>
               <li> <a href="#"> CreateNewAd </a> </li>
-              <li> <a href="#"> Logout </a> </li>
+            <li> <a href="/{{$language}}/logout"> Logout </a> </li>
               <li> <a href="#"> MyProfile </a> </li>
               <li> <a href="#"> MyProfile </a> </li>
             </ul>

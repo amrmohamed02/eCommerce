@@ -5,19 +5,17 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Comment;
 use App\Item;
+use App\Rate;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
 class CommentController extends Controller
 {
-    public function add(Request $request,$language)
+    public function add(Request $request,$language,$id)
     {
          App::setLocale($language);
-         if($request->isMethod('get')){
-            return view('admin.AddCategory',["language"=>$language]);
-         }
-         elseif($request->isMethod('post')){
+         if($request->isMethod('post')){
          //     $this->validate($request,[
          //         'name'=>'required|max:60',
          //         'email'=>'required|unique:user',
@@ -25,14 +23,12 @@ class CommentController extends Controller
          //         'terms'=>'required',
              // ]);
             $comment = new Comment();
-            $comment->name=$request->input('name');
-            $comment->description=$request->input('description');
-            $comment->ordering=$request->input('ordering');
-            $comment->visibilty=$request->input('visibilty');
-            $comment->allow_comment =$request->input('commenting');
-            $comment->allow_ads=$request->input('Ads');
+            $comment->comment=$request->input('comment');
+            $comment->status=0;
+            $comment->user_id=session('userid');
+            $comment->item_id=$id;
             $comment->save();
-            return redirect()>back();
+            return redirect()->back();
          }  
     }
 
@@ -70,5 +66,27 @@ class CommentController extends Controller
             else{
                 return view('admin.EditComment',['comment'=>$comment,"language"=>$language]);
             }  
+    }
+
+    public function addrate(Request $request,$language,$id)
+    {
+        App::setLocale($language);
+         if($request->isMethod('post')){
+            if($rate=Rate::where('user_id',session('userid'))->first()){
+                $rate->rate=$request->input('rate');
+                $rate->user_id=session('userid');
+                $rate->item_id=$id;
+                $rate->save();
+                return redirect()->back();
+            }
+            else{
+                $rate=new Rate();
+                $rate->rate=$request->input('rate');
+                $rate->user_id=session('userid');
+                $rate->item_id=$id;
+                $rate->save();
+                return redirect()->back();
+            }
+        }  
     }
 }
